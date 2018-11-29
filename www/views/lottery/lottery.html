@@ -1,0 +1,172 @@
+<ion-view>
+		<!-- Page Content -->
+		<div class="">
+			<div class="row game_middle_panel" style="margin:0">
+			  <div class="col-sm-12" style="border-bottom: 1px solid #e7e7e7; background-color: #48484c;">
+				  <div class="dis_inline">
+					  <div class="row">
+						  <img src="../../../img/lo1.png" width=36px height=36px style="margin:10px;" class="dis_inline">
+						  <h4 class="dis_inline" style="padding-top:13px; color:#fff;"><b>{{game.name}}</b></h4>
+					  </div>
+				  </div>
+				  <div class="dis_inline" style="float:right; margin:10px; color:#fff">
+					  <div class="row">
+						  <div class="dis_inline" style="padding:7px 10px 0px 10px"><span class="icon-o2"></span><a style="color:#ffffff" href="#/lottery/history/{{gameId}}"> 开奖结果 </a></div>
+						  <div class="dis_inline" style="padding:7px 10px 0px 10px"><span class="icon-o3"></span> 彩票介绍</div>
+					  </div>
+				  </div>
+			  </div>
+			  <div class="perio"></div>
+
+			  	<div class="fixedRightBox">
+				  	<div class="rightList">
+						<div ng-click="gameppt=true; playerppt=false">
+							<img src="../../../img/icon_sub2.png" alt="">
+							<p>投注</p>
+						</div>
+						<div ng-click="gameppt=false; playerppt=true">
+							<img src="../../../img/icon_sub3.png" alt="">
+							<p>赌徒</p>
+						</div>
+					</div>
+					<div class="closeRightList closeRightList1">
+						<a href="#/home"><img src="../../../img/icon_sub1.png" alt=""></a>
+					</div>
+				</div>
+		
+			  <div class="col-sm-12" style="background-color:#f3f3f3;padding-top:10px; padding-bottom:10px">
+				  <div class="row">
+					  <!-- <div class="col-sm-2 part-left">
+						  <div style="text-align:center; background-color:#fff; padding:10px;">
+							  <a><img src="../../../img/head6.png" width=50px height=50px></a><br>
+							  <span>昵称：<span>{{My.getUserName()}}</span></span><br>
+							  <span>余额：<span style="color:#f00" class="ng-binding">{{My.getMoney()}}</span></span>
+						  </div>
+						  <a class="btn btn-primary game_left_btn_group" href="{{base_url}}/#/bank/deposit"><span><img src="../../../img/bt_clock.png"> 账号充值</span></a>
+						  <a class="btn btn-primary game_left_btn_group" href="{{base_url}}/#/bank/withdraw"><span><img src="../../../img/bt_clock.png"> 立即提现</span></a>
+						  <a class="btn btn-danger game_left_btn_group" href="{{base_url}}/#/bank/trans/2"><span><img src="../../../img/bt_card.png"> 交易记录</span></a>
+						  <a class="btn btn-danger game_left_btn_group" href="{{base_url}}/#/lottery/week"><span><img src="../../../img/bt_card.png"> 投注记录</span></a>
+						  <button class="btn btn-success game_left_btn_group"><span><img src="../../../img/bt_ear.png"> 在线客服</span></button>
+					  </div> -->
+					  <div ng-show="gameppt" class="col-sm-6 tabpan" style="background-color:#fff;padding-bottom: 5.0rem;">
+						  <!-- <span>选择玩法</span> -->
+	  
+						  <!-- <div class="tab">
+							  <button class="tablinks" onclick="openCity(event, 'game1_1')" id="defaultOpen">两面</button>
+							  <button class="tablinks" onclick="openCity(event, 'game1_2')">冠亚和</button>
+							  <button class="tablinks" onclick="openCity(event, 'game1_3')">1-5名</button>
+							  <button class="tablinks" onclick="openCity(event, 'game1_4')">6-10名</button>
+						  </div> -->
+	
+						  <ion-content delegate-handle="menus" class="lottery-menu" scroll="false">
+							<div class="tab">
+								<li class="nav tablinks " ng-repeat="pane in panes" ng-class="{active:currPane.code==pane.code}" >
+									<a class="item col" ng-click="selectCate(pane);">{{pane.name}}
+										<span class="smallround" ng-class="{'menus-choose':betData[pane.code].length>0}"></span>
+									</a>
+								</li>
+							</div>
+						  </ion-content>
+	
+	
+						  <div style="margin-top:30px" ng-include="contentTpl"></div>
+	  
+						  <!-- <hr> -->
+						  <div class="mysticky row" style="border-top: 1px solid #eee; text-align:center;">
+								<div class="inputbet" style="margin-bottom: 20px">
+									<div>
+										<div class="text-center pb5" style="display:inline-block">已选中<span class="text-yellow"> {{shareData.betCount}}</span>注</div>
+										<label style="color: #f00" ng-show="shareData.lotteryState == 0"> | </label>
+										<div style="display:inline-block" ng-show="shareData.lotteryState == 0" class="close-pan"><div class="tip">已封盘</div></div>
+										<label style="color: #f00" ng-show="shareData.lotteryState == -1"> | </label>
+										<div style="display:inline-block" ng-show="shareData.lotteryState == -1" class="close-pan"><div class="tip">未开盘</div></div>
+									</div>
+										
+									<div type="text" style="width: 200px !important; display:inline-block">
+										<input autocomplete="off" spellcheck="false" ng-model="shareData.betMoney" placeholder="请输入下注金额" class="form-control form-control-sm">
+									</div>
+									
+									<div class="reset" style="display:inline-block">
+										<button type="button" class="btn btn-sm btn-danger button-bet" ng-click="bet($event)"><span>确认下注</span></button>
+										<button type="button" class="btn btn-sm btn-primary" ng-click="reset()"><span>重置</span></button>
+									</div>
+								</div>
+						  </div>
+					  </div>
+					  <div ng-show="playerppt"  id="a_scr" class="col-sm-4" style="background-color:#fff; font-size:14px; padding: 0px; overflow: auto; height: 750px;">
+						<div class="realdshow"></div>
+					  </div>
+				  </div>
+			  </div>
+
+			  <div class="modal fade" id="modal_dlg_gentou" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h6 class="modal-title" id="exampleModalLongTitle">跟投玩家</h6>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<table class="c_table" style="text-align: center" width="100%">
+									<thead>
+										<tr style="height: 20px; border-bottom: 1px solid #eee;">
+											<th>期号</th>
+											<th>内容</th>
+											<th>金额</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr style="height: 20px; border-bottom: 1px solid #eee;">
+											<td width="30%">{{BetStatusData.actionno}}</td>
+											<td width="40%" class="orderTwoTd" style="color: rgb(243, 89, 106);">{{BetStatusData.groupname}}_{{BetStatusData.actiondata}}</td>
+											<td width="30%">
+												<input type="number" class="form-control form-control-sm" style="text-align: center" ng-model="BetStatusDataChangeMoney">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="modal-footer">
+								<div class="total" style="float: left;">共&nbsp;<span style="color:#f00">{{BetStatusData.totalnum}}</span>&nbsp;注，金额&nbsp;<span style="color:#f00">{{BetStatusDataChangeMoney}}</span>&nbsp;<s class="qian_icon"></s></div>
+								<button style="" ng-click="betlikethis()" id="" type="button" class="btn btn-primary form-control-sm">确定跟投</button>
+								<button style="" id="" type="button" class="btn btn-danger form-control-sm" data-dismiss="modal">取消</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		  </div>
+		  <!-- /.container -->
+	  <!-- <script>
+	  
+		  $(document).ready(function(){
+			var sel = 'body[ng-controller="' + "AppCtrl" + '"]';
+			var b_url = angular.element(sel).scope().base_url;
+		
+			  $(".bodydiv").css("background-image", "url('" + b_url + "/assets/img/game_bg.png')");
+			  $(".bodydiv").css("width", "100%");
+			  $(".bodydiv").css("overflow", "auto");
+			  $(this).css("background-size", "cover");
+	  
+		  });
+	 
+	  </script> -->
+	
+	
+	
+	
+		<!-- <ion-nav-buttons side="left">
+			<button menu-toggle="left" class="button button-icon button-clear"><span class="game-name">{{game.name}}</span></button>
+		  </ion-nav-buttons>
+		  
+		<ion-nav-buttons side="right">
+			<span class="member-balance ng-binding">{{My.getMoney()}}</span>
+			<button class="button button-icon icon icon-liebiao" ng-click="showPoper($event);"></button>
+		</ion-nav-buttons> -->
+	
+		
+	</ion-view>

@@ -1,0 +1,76 @@
+<ion-view class="m-center">
+
+    <div id="app" style="padding-bottom: 1.33333rem;">
+        <div class="isHeader isNav">
+            <div class="headerWrap">
+                <div class="vux-header header">
+                    <div class="vux-header-left">
+                        <a class="vux-header-back" ng-click="back();">返回</a>
+                        <div class="left-arrow"></div>
+                    </div>
+                    <h1 class="vux-header-title">代理分享</h1>
+                    <!-- <div class="vux-header-right">
+                        <a href="#/setting" class="">设置</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="vux-flexbox userInfo userInfo-wrapper vux-flex-row">
+                <div class="vux-flexbox-item item-left">
+                    <img src="../../img/head6.png" class="avatar">
+                    <div class="grade">
+                        <img src="../../img/huimark.png" alt="">
+                    </div>
+                </div>
+                <div class="vux-flexbox-item item-middle">
+                    <h3><span>{{My.getUserName()}}</span></h3>
+                    <p><i class="person-edit"></i>
+                        <span>编辑个人资料</span>
+                    </p>
+                    <h3><span>{{My.getMoney()}}</span></h3>
+                </div>
+                <div class="vux-flexbox-item item-right">
+                    <a href="#/vipLevel" class="">
+                        <div class="honor-badge-icon" style="animation-name: myalter01;"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="userInfo group-min-top">
+                <div class="col-sm-12">
+                    <div class="p_userinfo">
+                        <h5 class="hotgame_mark">代理分享</h5>
+                        <div class="col-sm-6" style="float:none; margin: auto; text-align:center">
+                            <div class="alert alert-danger copy_alert" style="display: none; margin-top:10px"><strong>复制成功!</strong></div>
+                            <div id="qrcode" style="width:168px; height:168px; margin:auto; margin-top:30px; margin-bottom: 30px"></div>
+                            <p id="qrtext">{{agenturl}}</p>
+                            <input type="button" class="btn btn-danger form-control form-control-small" value="复制" onclick="func_copy()"/>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-view>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+                width: 168,
+                height: 168
+            });
+
+        setTimeout(function(){ 
+            qrcode.makeCode($("#qrtext").text());
+        }, 100);
+    });
+    function func_copy()
+    {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($("#qrtext").text()).select();
+        document.execCommand("copy");
+        $(".copy_alert").show();
+        $temp.remove();
+    }
+</script>

@@ -1,0 +1,621 @@
+<ion-view class="m-index" view-title="" style="background-color: #fff">
+
+	<!-- <div class="container">
+		<div class="login_panel" style="padding: 30px 20px 24px 20px;">
+			<div class="row fpart">
+				<div class="col-sm-4">
+					<a href="#/PersonalCenter/personalInfo?query=true" class="">
+						<img src="{{base_url}}/assets/img/head6.png" alt="" width=100%>
+					</a>
+				</div>
+				<div class="col-sm-8">
+					<div class="info-box">
+						<span class="user-name">{{My.getUserName();}}</span><br>
+						<span>余额: <span style="color: #f00">{{My.getMoney();}}</span></span><br>
+						<span>
+							<button class="btn btn-danger">充值</button>
+							<span>&nbsp</span>
+							<button class="btn btn-primary">提现</button>
+						<span>
+					</div>
+				</div>
+			</div>
+			<div class="level-info">
+				<div class="level-icon slevel01"></div>
+				<div class="progress slevel02" style="width:80%; margin:1px; float:right">
+					<div class="progress-bar progress-bar-striped progress-bar-animated loged-progress-bar ivu-tooltip" style="width: 60%;">
+						<div class="ivu-tooltip-rel">
+							<span class="progress-inner"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<span>推荐游戏</span>
+			<div class="row">
+				<ul class="sp_game_list">
+					<li>
+						<span class="arrow" style="width:20px"> > <i class="ivu-icon ivu-icon-ios-arrow-right"></i></span>
+						<span class="lottery-logo" style="width:60px"><img src="{{base_url}}/assets/img/sp_game.png" width=30% alt=""></span>
+						<span title="北京赛车" class="name">北京赛车</span>
+						<span title="官方玩法(高赔率1%-3%回水)" class="room">官方玩法(高赔率1%-3%回水)官方玩法(高赔率1%-3%回水)</span>
+						<span class="status status-red" style="background-color:#c22; color:#fff;"><a href="{{base_url}}/#/lottery/index/50" style="color:#fff">推荐游戏</a></span><br>
+					</li>
+					<li>
+						<span class="arrow" style="width:20px"> > <i class="ivu-icon ivu-icon-ios-arrow-right"></i></span>
+						<span class="lottery-logo" style="width:60px"><img src="{{base_url}}/assets/img/sp_game.png" width=30% alt=""></span>
+						<span title="幸运飞艇" class="name">幸运飞艇</span>
+						<span title="官方玩法(高赔率1%-3%回水)" class="room">官方玩法(高赔率1%-3%回水)官方玩法(高赔率1%-3%回水)</span>
+						<span class="status status-red" style="background-color:#c22; color:#fff;"><a href="{{base_url}}/#/lottery/index/55" style="color:#fff">推荐游戏</a></span><br>
+					</li>
+					<li>
+						<span class="arrow" style="width:20px"> > <i class="ivu-icon ivu-icon-ios-arrow-right"></i></span>
+						<span class="lottery-logo" style="width:60px"><img src="{{base_url}}/assets/img/sp_game.png" width=30% alt=""></span>
+						<span title="重庆时时彩" class="name">重庆时时彩</span>
+						<span title="官方玩法(高赔率1%-3%回水)" class="room">官方玩法(高赔率1%-3%回水)官方玩法(高赔率1%-3%回水)</span>
+						<span class="status status-red" style="background-color:#c22; color:#fff;"><a href="{{base_url}}/#/lottery/index/1" style="color:#fff">推荐游戏</a></span><br>
+					</li>
+					<li>
+						<span class="arrow" style="width:20px"> > <i class="ivu-icon ivu-icon-ios-arrow-right"></i></span>
+						<span class="lottery-logo" style="width:60px"><img src="{{base_url}}/assets/img/sp_game.png" width=30% alt=""></span>
+						<span title="PC蛋蛋" class="name">PC蛋蛋</span>
+						<span title="官方玩法(高赔率1%-3%回水)" class="room">官方玩法(高赔率1%-3%回水)官方玩法(高赔率1%-3%回水)</span>
+						<span class="status status-red" style="background-color:#c22; color:#fff;"><a href="{{base_url}}/#/lottery/index/66" style="color:#fff">推荐游戏</a></span><br>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div> -->
+
+
+	<div id="app" style="margin:auto; padding-bottom: 3.33333rem;">
+		<div class="isHeader isNav">
+			<div class="headerWrap">
+				<div class="vux-header header">
+					<div class="vux-header-left">
+						<a class="vux-header-back" style="display: none;">返回</a>
+						<div class="left-arrow" style="display: none;"></div>
+					</div>
+					<h1 class="vux-header-title">
+						<span>畅赢娱乐城</span>
+					</h1>
+					<!-- <div class="vux-header-right">
+						<span class="home-head">
+							<i class="icon icon-head-message newMsg"></i>
+							<i class="icon icon-head-add"></i>
+						</span>
+					</div> -->
+				</div>
+			</div>
+			<div class="page-content">
+				<div class="list-wrapper">
+					<div class="scroll-content" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: translate(0px, 0px) scale(1) translateZ(0px);">
+						<div>
+							<div class="slideBox">
+								<div class="slide-wrappe">
+									<div class="slide">
+										<img src="../../img/land_bg.png" width="100%">
+										<!-- <div class="slide-group" style="width: 2184px; transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: translate(-364px, 0px) scale(1) translateZ(0px);">
+											<div class=" slide-item" style="width: 364px;">
+												<a href="httpsh5=1" target="_blank">
+													<img src="../../img/slide_1.png">
+												</a>
+											</div>
+											<div class="slide-item" style="width: 364px;">
+												<a href="httpsrd" target="_blank">
+													<img src="../../img/slide_1.png">
+												</a>
+											</div>
+											<div class="slide-item" style="width: 364px;">
+												<a href="http" target="_blank">
+													<img src="../../img/slide_1.png">
+												</a>
+											</div>
+											<div class=" slide-item" style="width: 364px;">
+												<a href="http://yh.pc3333.com/yh1/" target="_blank">
+													<img src="../../img/slide_1.png">
+												</a>
+											</div>
+											<div class="slide-item" style="width: 364px;">
+												<a href="httpt" target="_blank">
+													<img src="../../img/slide_1.png">
+												</a>
+											</div>
+											<div class=" slide-item" style="width: 364px;">
+												<a href="http" target="_blank">
+													<img src="../../img/slide_1.png">
+												</a>
+											</div>
+										</div> -->
+										<div class="dots">
+											<span class="dot active"></span>
+											<span class="dot"></span>
+											<span class="dot"></span>
+											<span class="dot"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="notice bgWhite">
+								<div class="weui-cell__hd">
+									<i class="cell-icon cell-icon-notice"></i>
+								</div>
+								<div class="vux-cell-bd">
+									<p></p>
+									<span class="vux-label-desc"></span>
+								</div>
+								<div class="weui-cell__ft vux-cell-primary vux-cell-align-left">
+									<!-- <div class="vux-marquee" style="height: 24px;">
+										<ul class="vux-marquee-box" style="transform: translate3d(0px, -72px, 0px); transition: transform 300ms ease 0s;">
+											<li class="text-red">六合彩第122期特码:43龙(绿)波</li>
+											<li class="text-red">今晚六合彩准时开奖！</li>
+											<li class="text-red">新会员首存赠送18%（100以上）</li>
+											<li class="text-red">畅赢娱乐城欢迎您</li>
+											<li class="text-red">畅赢娱乐城长期诚邀代理！</li>
+											<li class="text-red">六合彩第122期特码:43龙(绿)波</li>
+										</ul>
+									</div> -->
+									<div class="lismAnnoun">
+										<ul class="announbox" style="list-style-type: none; color:#000">
+											<li class="announ" style="height:1.5rem"><zl-notice></zl-notice></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="vux-flexbox entrance-list bgWhite vux-flex-row">
+								<div class="vux-flexbox-item">
+									<div class="flex-demo activeBox">
+										<i class="icon" style="background-image: url('../../img/not_1.png');"></i>
+										<p>签到有礼</p>
+									</div>
+								</div>
+								<div class="vux-flexbox-item">
+									<a href="#/lottery/task" class="flex-demo activeBox">
+										<i class="icon" style="background-image: url('../../img/not_2.png');"></i>
+										<p class=" ">有奖任务</p>
+									</a>
+								</div>
+								<div class="vux-flexbox-item">
+									<a href="#/lottery/week" class="flex-demo activeBox ">
+										<i class="icon" style="background-image: url('../../img/not_3.png');"></i>
+										<p class=" ">投注记录</p>
+									</a>
+								</div>
+								<div class="vux-flexbox-item">
+									<a href="#/bank/deposit" class="flex-demo activeBox ">
+										<i class="icon" style="background-image: url('../../img/not_4.png');"></i>
+										<p class=" ">立即充值</p>
+									</a>
+								</div>
+							</div>
+							<div class="pdlr bgWhite mt">
+								<h3 class="public-title"><b>推荐游戏</b> <span class="text-gray">平台极力推荐</span></h3>
+								<div class="vux-flexbox recommend-game vux-flex-row">
+									<div class="vux-flexbox-item">
+										<div class="flex-demo activeBox">
+											<div>
+												<i class="room-logo"><img src="../../img/hg_1.png"></i>
+												<h5><b>北京(PK10)</b></h5>
+												<p><i class="clock"></i>火热投注中</p>
+											</div>
+										</div>
+									</div>
+									<div class="vux-flexbox-item">
+										<div class="flex-demo activeBox">
+											<div>
+												<i class="room-logo"><img src="../../img/hg_2.png"></i>
+												<h5><b>幸运飞艇</b></h5>
+												<p><i class="clock"></i>火热投注中</p>
+											</div>
+										</div>
+									</div>
+									<div class="vux-flexbox-item">
+										<div class="flex-demo activeBox">
+											<div>
+												<i class="room-logo"><img src="../../img/hg_3.png"></i>
+												<h5><b>重庆时时彩</b></h5>
+												<p><i class="clock"></i>火热投注中</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="pdlr bgWhite mt">
+								<h3 class="public-title"><b>经典游戏</b> <span class="text-gray">彩种丰富 玩法齐全</span></h3>
+								<div class="lottery-list clearfix">
+									<ul>
+										<li class="short-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/lottery/index/21" class="explain">5分钟一期</a>
+												<img src="../../img/game1.png" class="data-img">
+												<span class="imgCover "></span>
+											</div>
+										</li>
+										<li class="short-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/lottery/index/60" class="explain">3分半一期</a>
+												<img src="../../img/game2.png" class="data-img">
+												<span class="imgCover"></span>
+											</div>
+										</li>
+										<li class="short-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/lottery/index/50" class="explain">5分钟一期</a>
+												<img src="../../img/game3.png" class="data-img">
+												<span class="imgCover"></span>
+											</div>
+										</li>
+										<li class="short-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/lottery/index/72" class="explain ">3分钟一期</a>
+												<img src="../../img/game4.png" class="data-img">
+												<span class="imgCover"></span>
+											</div>
+										</li>
+										<li class="short-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/lottery/index/55" class="explain">5分钟一期</a>
+												<img src="../../img/game5.png" class="data-img">
+												<span class="imgCover"></span>
+											</div>
+										</li>
+										<li class="short-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/lottery/index/61" class="explain">5分钟一期</a>
+												<img src="../../img/game6.png" class="data-img">
+												<span class="imgCover"></span>
+											</div>
+										</li>
+										<li class="short-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/lottery/index/1" class="explain">10分钟一期</a>
+												<img src="../../img/game7.png" class="data-img">
+												<span class="imgCover"></span>
+											</div>
+										</li>
+										<li class="short-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/lottery/index/66" class="explain">3分钟一期</a>
+												<img src="../../img/game8.png" class="data-img">
+												<span class="imgCover"></span>
+											</div>
+										</li>
+										<li class="short-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/lottery/index/73" class="explain">5分钟一期</a>
+												<img src="../../img/game9.png" class="data-img">
+												<span class="imgCover"></span>
+											</div>
+										</li>
+										<li class="short-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/lottery/index/70" class="explain">每周开奖3期</a>
+												<img src="../../img/game10.png" class="data-img">
+												<span class="imgCover "></span>
+											</div>
+										</li>
+										<li class="short-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/lottery/index/10" class="explain">5分钟一期</a>
+												<img src="../../img/game11.png" class="data-img">
+												<span class="imgCover"></span>
+											</div>
+										</li>
+										<li class="short-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/lottery/index/74" class="explain">1分钟一期</a>
+												<img src="../../img/game12.png" class="data-img">
+												<span class="imgCover"></span>
+											</div>
+										</li>
+										<!-- <li class="long-pic">
+											<div class="">
+												<i class="today-draw" style="display: none;"></i>
+												<a href="#/introDetail?type=11" class="explain" >1分钟一期</a>
+												<img src="httppng" class="data-img">
+												<span class="imgCover"></span>
+											</div>
+										</li> -->
+									</ul>
+								</div>
+							</div>
+							<div class="pdlr bgWhite mt">
+								<h3 class="public-title"><b>平台数据</b><span class="text-gray">可靠大平台 用户赚钱率高达<em class="text-red"><span class="earnRate">98</span>%</em></span></h3>
+								<div class="platform-data clearfix">
+									<li>
+										<div>
+											<p><i class="icon usernum"></i>累计用户数</p>
+											<h5><span>847,648</span></h5>
+											<img src="../../img/analbg_1.png" class="background">
+										</div>
+									</li>
+									<li>
+										<div>
+											<p><i class="icon goldenmoney"></i>累计已赚元宝</p>
+											<h5><span>16,983,558</span></h5>
+											<img src="../../img/analbg_2.png" class="background">
+										</div>
+									</li>
+								</div>
+							</div>
+							<!-- <div class="pdlr bgWhite mt">
+								<h3 class="public-title">投注动态 <span class="text-gray">新老玩家动态</span></h3>
+								<div class="dynamic-wrap">
+									<div class="dynamic clearfix">
+										<div class="dot-line-wrap">
+											<div class="dot-line">
+												<span></span>
+											</div>
+											<div class="dot-line">
+												<span></span>
+											</div>
+											<div class="dot-line">
+												<span></span>
+											</div>
+											<div class="dot-line">
+												<span></span>
+											</div>
+											<div class="dot-line">
+												<span></span>
+											</div>
+										</div>
+										<div class="list-wrap">
+											<ul class="anim" style="margin-top: -0.8rem;">
+												<li>
+													<span class="text-blue list-name">心***想</span>
+													<span class="list-lottery">投注急速赛车<em class="text-red">10000.00</em>元宝</span>
+													<span class="text-gray list-addtime">10-29 18:33</span>
+												</li>
+												<li>
+													<span class="text-blue list-name">胡***坤</span>
+													<span class="list-lottery">投注欢乐骰宝<em class="text-red">1180.00</em>元宝</span>
+													<span class="text-gray list-addtime">10-29 18:33</span>
+												</li>
+												<li>
+													<span class="text-blue list-name">轻***所</span>
+													<span class="list-lottery">投注北京PK10<em class="text-red">6200.00</em>元宝</span>
+													<span class="text-gray list-addtime">10-29 18:33</span>
+												</li>
+												<li>
+													<span class="text-blue list-name">晚***的</span>
+													<span class="list-lottery">投注北京PK10<em class="text-red">2000.00</em>元宝</span>
+													<span class="text-gray list-addtime">10-29 18:33</span>
+												</li>
+												<li>
+													<span class="text-blue list-name">正***常</span>
+													<span class="list-lottery">投注三分彩<em class="text-red">800.00</em>元宝</span>
+													<span class="text-gray list-addtime">10-29 18:33</span>
+												</li>
+												<li>
+													<span class="text-blue list-name">你***的</span>
+													<span class="list-lottery">投注北京PK10<em class="text-red">1300.00</em>元宝</span>
+													<span class="text-gray list-addtime">10-29 18:33</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<p class="vux-divider home-divider">亲，我是有底线的</p> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="redPacket-entrance"></div>
+			<div class="vux-x-dialog red-dialog">
+				<div class="weui-mask" style="display: none;"></div>
+				<div class="weui-dialog" style="display: none;">
+					<div class="red-wrap red-notOpen">
+						<span class="close-icon"></span>
+						<div class="red-avartar">
+							<img src="httpng" alt="">
+						</div>
+						<div class="red-slogan">限时红包</div>
+						<div class="red-btn">
+							<a href="javascript:void(0)" class="">
+								<span class="open-btn front"></span>
+								<span class="open-btn back"></span>
+							</a>
+						</div>
+						<div class="red-copyright"><i class="jingbi"></i>本活动最终解释权归PC手游所有</div>
+					</div>
+				</div>
+			</div>
+			<div class="vux-x-dialog global-dialog notice-dialog">
+				<div class="weui-mask" style="display:none;"></div>
+				<div class="weui-dialog" style="display: none;">
+					<div class="dialog-content">
+						<h1 class="dialog-tit"><i class="notice-icon-con"></i><br>AHSDFIEOSDFEOF</h1>
+						<div class="dialog-con"></div>
+						<button class="weui-btn weui-btn_radius weui-btn_warn">我知道了</button>
+					</div>
+				</div>
+			</div>
+			<div class="vux-x-dialog global-dialog signIn-dialog">
+				<div class="weui-mask" style="display: none;"></div>
+				<div class="weui-dialog" style="display: none;">
+					<div class="dialog-content">
+						<div>
+							<span class="vux-close"></span>
+						</div>
+						<h1 class="dialog-tit"></h1>
+						<div class="dialog-con signIn">
+							<ul>
+								<li class="">
+									<span>第1天</span>
+									<p class="ingot"></p>
+									<span>0 元宝</span>
+								</li>
+								<li class="">
+									<span>第2天</span>
+									<p class="ingot"></p>
+									<span>0 元宝</span>
+								</li>
+								<li class="">
+									<span>第3天</span>
+									<p class="ingot"></p>
+									<span>0 元宝</span>
+								</li>
+								<li class="">
+									<span>第4天</span>
+									<p class="ingot"></p>
+									<span>0 元宝</span>
+								</li>
+								<li class="">
+									<span>第5天</span>
+									<p class="ingot"></p>
+									<span>0 元宝</span>
+								</li>
+								<li class="">
+									<span>第6天</span>
+									<p class="ingot"></p>
+									<span>0 元宝</span>
+								</li>
+								<li class="">
+									<span>第7天</span>
+									<p class="gift"></p>
+									<span>神秘礼物</span>
+								</li>
+							</ul>
+							<button class="weui-btn weui-btn_minRadius weui-btn_warn">领取奖励</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="vux-x-dialog global-dialog signInOK-dialog">
+				<div class="weui-mask" style="display: none;"></div>
+				<div class="weui-dialog" style="display: none;">
+					<p class="ingot"></p>
+					<span>+ 0 元宝</span>
+				</div>
+			</div>
+			<div class="vux-x-dialog global-dialog sign-dialog">
+				<div class="weui-mask" style="display: none;"></div>
+				<div class="weui-dialog" style="display: none;">
+					<div class="dialog-content">
+						<h1 class="dialog-tit">活动规则说明</h1>
+						<div class="dialog-con">
+							<p>完成以下任意任务即可参与平台常规任务和每日签到活动：</p>
+							<p class="text-gray">1. 当天累计充值达
+								<span class="text-red">100</span>元，当前累计充值
+								<span class="text-red">0</span>元，还差
+								<span class="text-red">100</span>元
+							</p>
+							<p class="text-gray">2. 当天累计投注达
+								<span class="text-red">1000</span>元，当前累计投注
+								<span class="text-red">0</span>元，还差
+								<span class="text-red">1000</span>元
+							</p>
+						</div>
+						<button class="weui-btn weui-btn_radius weui-btn_warn">确定</button>
+					</div>
+				</div>
+			</div> -->
+		</div>
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+    <header class="business-header" style="display: none">
+		<div>
+			<div class="row">
+				<div class="col-lg-12">
+					<img src="../../img/land_bg.png" width=100% />
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<div class="container lan_board" style="display: none">
+		<div class="row">
+			<div class="col-sm-3">
+				<span>
+					<h4 class="news_mark"><b>平台公告 News</b></h4>
+					<button class="btn btn-primary" style="padding:2px;display: inline-block; margin-bottom: 8px; margin-left: 10px">更多+</button>
+				</span>
+				<div style="color: #f00; padding-left:20px"><b>六合彩第109期特码:04羊(蓝)波</b></div><hr>
+				<div style="padding-left:20px;" class="row">
+					<div class="col-sm-4">
+						<img src="{{base_url}}/assets/img/news.png">
+					</div>
+					<div class="col-sm-8">
+						<div style="font-size: 13px">六合彩第109期开奖结果:14鸡-20兔-22牛-24猪-05马-48猪+特码:04羊</div>
+					</div>
+				</div>
+				<hr>
+				<div class="lismAnnoun">
+					<ul class="announbox" style="font-size:15px;list-style-type: none; color:#000">
+						<li class="announ"><span>六合彩第108期开奖结果</span></li>
+						<li class="announ"><span>中秋佳节，感恩常伴，感恩回馈活动已开启！</span></li>
+						<li class="announ"><span><font color="red"><zl-notice></zl-notice></font></span></li>
+					</ul>
+				</div>
+				<span>
+					<h4 class="dynamic_mark"><b>投注动态 Dynamic</b></h4>
+				</span>
+			</div>
+			<div class="col-sm-9">
+				<span>
+					<h4 class="hotgame_mark"><b>热门彩种 Hot Lottery</b></h4>
+				</span>
+				<div class="row">
+					<div class="col-sm-4"><a href="{{base_url}}/#/lottery/index/50"><img width=100% src="{{base_url}}/assets/img/hot_game1.jpg" style="border-radius: 5px;" ></a></div>
+					<div class="col-sm-4"><a href="{{base_url}}/#/lottery/index/72"><img width=100% src="{{base_url}}/assets/img/hot_game2.jpg" style="border-radius: 5px;" ></a></div>
+					<div class="col-sm-4"><a href="{{base_url}}/#/lottery/index/55"><img width=100% src="{{base_url}}/assets/img/hot_game3.jpg" style="border-radius: 5px;" ></a></div>
+				</div>
+				<hr>
+				<span>
+					<h4 class="allgame_mark"><b>全部彩种 All Lotteries</b></h4>
+				</span>
+				<div class="row allgame">
+					<div class="col-sm-4 allgame_item"><a href="{{base_url}}/#/lottery/index/1"><img width=100% src="{{base_url}}/assets/img/game1.jpg" ></a></div>
+					<div class="col-sm-4 allgame_item"><a href="{{base_url}}/#/lottery/index/73"><img width=100% src="{{base_url}}/assets/img/game2.jpg" ></a></div>
+					<div class="col-sm-4 allgame_item"><a href="{{base_url}}/#/lottery/index/61"><img width=100% src="{{base_url}}/assets/img/game3.jpg" ></a></div>
+					<div class="col-sm-4 allgame_item"><a href="{{base_url}}/#/lottery/index/21"><img width=100% src="{{base_url}}/assets/img/game4.jpg" ></a></div>
+					<div class="col-sm-4 allgame_item"><a href="{{base_url}}/#/lottery/index/60"><img width=100% src="{{base_url}}/assets/img/game5.jpg" ></a></div>
+					<div class="col-sm-4 allgame_item"><a href="{{base_url}}/#/lottery/index/66"><img width=100% src="{{base_url}}/assets/img/game6.jpg" ></a></div>
+					<div class="col-sm-4 allgame_item"><a href="{{base_url}}/#/lottery/index/10"><img width=100% src="{{base_url}}/assets/img/game7.jpg" ></a></div>
+					<div class="col-sm-4 allgame_item"><a href="{{base_url}}/#/lottery/index/70"><img width=100% src="{{base_url}}/assets/img/game8.jpg" ></a></div>
+					<div class="col-sm-4 allgame_item"><a href="{{base_url}}/#/lottery/index/74"><img width=100% src="{{base_url}}/assets/img/game9.jpg" ></a></div>
+				</div>
+			</div>
+		</div>
+  
+		<div class="row">
+			<div class="col-lg-12">
+				<img src="{{base_url}}/assets/img/hf.png" width=100% />
+			</div>
+		</div>
+	</div> -->
+</ion-view>
+
+
+

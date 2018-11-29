@@ -1,0 +1,58 @@
+<ion-view view-title="开奖结果">
+
+	<div id="app" style="padding-bottom: 1.33333rem;">
+		<div class="isHeader isNav">
+			<div class="headerWrap">
+				<div class="vux-header header">
+					<div class="vux-header-left">
+						<a class="vux-header-back" style="" ng-click="back();">返回</a>
+						<div class="left-arrow" style=""></div>
+					</div>
+					<h1 class="vux-header-title">开奖结果</h1>
+					<!-- <div class="vux-header-right">
+						<a href="#/setting" class="">设置</a>
+					</div> -->
+				</div>
+			</div>
+			<div class="userInfo group-min-top">
+				<div class="">
+					<div class="kaijang">
+						<div class="container" style="background-color:#ffffff; ">
+							<ion-content class="history has-header col-sm-12" scroll="false">
+								<div class="row">
+									<div class="col-6 pd item-select my-select row-width">
+										<select ng-model="queryData.gameId" ng-options="game.id as game.name for game in gameList" ng-change="onQuery()" class="disable-user-behavior form-control form-control-sm"></select>
+									</div>
+							
+									<div class="col-6 pd item-select my-select row-width right30" ng-show="showDate">
+										<select ng-model="queryData.date" ng-change="onQuery()" class="date-select disable-user-behavior form-control form-control-sm"></select>
+									</div>
+								</div>
+								<div class="row text-center title" style="padding:10px; margin-top:20px; background-color: #007bff; color:#fff">
+									<div class="col col-4 radiu">期数</div>
+									<div class="col col-8 radiu">开奖号码</div>
+								</div>
+								
+								<ion-content class="list" style="text-align: center" scroll="false">
+									<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+									
+									<div class="row" ng-repeat="data in dataList">
+										<div class="col col-4 tal"><div class="cont lh"><div>{{data.turnNum}}</div><div>{{data.openTime.substr(5, 11)}}</div></div></div>
+										<div class="col col-8 tal">
+											<div class="cont" ng-bind-html="data.openNum|codeHtml:queryData.gameId:'history'"></div>
+										</div>
+									</div>
+									
+									<div ng-if="dataList.length == 0" class="empty-tip">暂无数据</div>
+									<div ng-show="!dataList" class="spinner-warp"><ion-spinner class="spinner spinner-ios"></ion-spinner></div>
+								</ion-content>
+							</ion-content>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+</ion-view>

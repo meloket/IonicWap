@@ -1,0 +1,74 @@
+<ion-view view-title="微信在线支付">
+    <div id="app" style="padding-bottom: 1.33333rem;">
+        <div class="isHeader isNav">
+            <div class="headerWrap">
+                <div class="vux-header header">
+                    <div class="vux-header-left">
+                        <a class="vux-header-back" ng-click="back();">返回</a>
+                        <div class="left-arrow" style="display: none;"></div>
+                    </div>
+                    <h1 class="vux-header-title">微信在线支付</h1>
+                    <!-- <div class="vux-header-right">
+                        <a href="#/setting" class="">设置</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="vux-flexbox userInfo userInfo-wrapper vux-flex-row">
+                <div class="vux-flexbox-item item-left">
+                    <img src="../../img/head6.png" class="avatar">
+                    <div class="grade">
+                        <img src="../../img/huimark.png" alt="">
+                    </div>
+                </div>
+                <div class="vux-flexbox-item item-middle">
+                    <h3><span>{{My.getUserName()}}</span></h3>
+                    <p><i class="person-edit"></i>
+                        <span>编辑个人资料</span>
+                    </p>
+                    <h3><span>{{My.getMoney()}}</span></h3>
+                </div>
+                <div class="vux-flexbox-item item-right">
+                    <a href="#/vipLevel" class="">
+                        <div class="honor-badge-icon" style="animation-name: myalter01;"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="userInfo group-min-top">
+                <div class="col-sm-12">
+                    <div class="p_deposit">
+                        <h5 class="hotgame_mark">存款</h5>
+                        <hr>
+                        <ion-content>
+
+                        <div class="item-online"  style="text-align:center">
+                            <form id="onlinepay-form" name="onlinepayForm" novalidate target="_blank" action="/pay/wx.html" method="post">
+                                <input name="x-session-token" type="hidden" ng-value="xSessionToken" />
+                                <input name="token" type="hidden" ng-value="xSessionToken" />
+                                <div class="item item-input col-sm-6" style="float: none;  margin: 0 auto; padding-top:50px">
+                                    <input type="text" name="amount" ng-model="onlinepayData.depositMoney" placeholder="请填写存款金额" ng-keyup="parseFloatMoneyInDepositPage($event)" required class="reset-field form-control-sm form-control">
+                                </div>
+                                <p class="item-warn text-light" style="font-size:12px; color:#e00!important">单笔最低10元最高5000元，如无法支付请降低额度。支付成功自动到账，无需提交存款信息</p>
+                                <label class="item item-select">
+                                    <select name="rechId" ng-model="onlinepayData.payWay" ng-options="('微信支付' + v.order) for v in rechTypeList track by v.id" required class="form-control form-control-sm">
+                                        <option value="">选择支付账户</option>
+                                    </select>
+                                    <input type="hidden" name="payId" ng-value="onlinepayData.payWay.payCode" />
+                                </label><hr>
+                                <input ng-disabled="onlinepayForm.$invalid" type="button" ng-click="onlinePay()" class="button button-block button-positive button-positive-theme col-sm-3 form-control form-control-sm btn btn-danger" value="开始充值">
+                            </form>
+                        </div>
+
+                        </ion-content>
+                        <script id="submitData-template" type="text/ng-template">
+                            <p>支付方式: 微信在线支付</p>
+                            <p>支付金额: <font color="red">¥{{onlinepayData.depositMoney}}</font></p>
+                            <p>1.成功付款后将会自动到账。</p>
+                            <p>2.长时间无反应，请联系客服。</p>
+                        </script>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-view>

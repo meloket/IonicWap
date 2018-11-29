@@ -1,0 +1,21 @@
+{
+  "name": "wap_ionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ],
+  "pro_id": "2a03baf0",
+  "proxies": [
+    {
+      "path": "/*",
+      "proxyUrl": "http://localhost/wap/*"
+    }
+  ]
+}
+

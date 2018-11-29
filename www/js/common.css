@@ -1,0 +1,19 @@
+#tjcg{
+    overflow: hidden;
+    padding:30px 0;
+}
+#tjcg_sb{
+    overflow: hidden;
+    padding:30px 0;
+}
+.tjcg_box{
+    width:100%;
+    margin:0 auto;
+    text-align:center;
+}
+.tjcg_img{
+    text-align:center;
+    margin:0 auto;
+    width:20%;
+}
+

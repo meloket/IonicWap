@@ -1,0 +1,176 @@
+<ion-view view-title="登录密码" class="m-center">
+
+    <div id="app" style="padding-bottom: 1.33333rem;">
+        <div class="isHeader isNav">
+            <div class="headerWrap">
+                <div class="vux-header header">
+                    <div class="vux-header-left">
+                        <a class="vux-header-back" ng-click="back();">返回</a>
+                        <div class="left-arrow" style="display: none;"></div>
+                    </div>
+                    <h1 class="vux-header-title">安全设置</h1>
+                    <!-- <div class="vux-header-right">
+                        <a href="#/setting" class="">设置</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="vux-flexbox userInfo userInfo-wrapper vux-flex-row">
+                <div class="vux-flexbox-item item-left">
+                    <img src="../../img/head6.png" class="avatar">
+                    <div class="grade">
+                        <img src="../../img/huimark.png" alt="">
+                    </div>
+                </div>
+                <div class="vux-flexbox-item item-middle">
+                    <h3><span>{{My.getUserName()}}</span></h3>
+                    <p><i class="person-edit"></i>
+                        <span>编辑个人资料</span>
+                    </p>
+                    <h3><span>{{My.getMoney()}}</span></h3>
+                </div>
+                <div class="vux-flexbox-item item-right">
+                    <a href="#/vipLevel" class="">
+                        <div class="honor-badge-icon" style="animation-name: myalter01;"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="userInfo group-min-top">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="p_change_pass">
+                            <h5 class="hotgame_mark">安全设置</h5>
+                            
+                            <div class="col-sm-12 col-12" style="float:none; margin: auto">
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3 col-3">登录密码 <span class="icon img-lock" style=""></span></div>
+                                    <div class="col-sm-7 col-7" style="color: #999;">登录账号需要用的密码</div>
+                                    <div class="col-sm-2 col-2"><a class="login_pass_cbt" style="color:#007bff;" data-toggle="modal" data-target="#modal_dlg_change_login_pass">重置</a></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3 col-3">支付密码 <span class="icon img-lock" style=""></span></div>
+                                    <div class="col-sm-7 col-7" style="color: #999;">在账号资金变动时需要输入的密码</div>
+                                    <div class="col-sm-2 col-2"><a class="money_pass_cbt" style="color:#007bff;" data-toggle="modal" data-target="#modal_dlg_change_money_pass">重置</a></div>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+    
+                        <div class="modal fade" id="modal_dlg_change_login_pass" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <form name="mdfLoginPwdForm" method="post" accept-charset="utf-8">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">登录密码重置</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p>旧密码</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" name="OldLoginPwd" placeholder="请输入6-15位且必须包含英文和数字的密码" ng-model="mdfLoginPwdData.OldLoginPwd" required ng-minlength="6" ng-maxlength="20" >
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-8">&nbsp</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p>密码</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" name="NewLoginPwd" placeholder="请输入6-15位且必须包含英文和数字的密码" required ng-model="mdfLoginPwdData.NewLoginPwd" ng-minlength="6" ng-maxlength="20">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-8">&nbsp</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p>确认密码</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" name="NewLoginPwdRpt" placeholder="请输入确认密码" ng-model="mdfLoginPwdData.NewLoginPwdRpt" required >
+                                            </div>
+                                        </div>
+    
+                                        <span class="misalert4" style="display:none; color:#f00; padding-left:50px"></span>
+                                        
+                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-danger" ng-click="updatePwd();">确定</button>
+                                        <button type="button" class="btn btn-default" id="modal_dlg_change_login_pass_close" data-dismiss="modal">取消</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="modal fade" id="modal_dlg_change_money_pass" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <form name="fundPwdForm" method="post" accept-charset="utf-8">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">支付密码重置</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                    
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p>旧密码</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input ng-if="!My.hasFundPwd()" class="form-control" type="password" name="loginPwd" placeholder="输入登录密码" ng-model="fundPwdFormData.loginPwd" required ng-minlength="6" ng-maxlength="20"/>
+                                                <input ng-if="My.hasFundPwd()" class="form-control" type="password" name="oldFundPwd" placeholder="输入旧取款密码" ng-model="fundPwdFormData.oldFundPwd" required/>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-8">&nbsp</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p>密码</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" name="newFundPwd" placeholder="输入新取款密码" ng-model="fundPwdFormData.newFundPwd" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-8">&nbsp</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p>确认密码</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" name="newFundPwdRpt" placeholder="再次输入新密码" ng-model="fundPwdFormData.newFundPwdRpt" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <span class="misalert4" style="display:none; color:#f00; padding-left:50px"></span>
+                                        
+                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-danger" ng-click="setFundPwd();">确定</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-view>

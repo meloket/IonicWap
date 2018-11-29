@@ -1,0 +1,135 @@
+
+
+
+
+<ion-view view-title="消息中心" class="m-center">
+        <!-- Page Content -->
+        <div class="container">
+            <div class="row info_top_panel">
+                <div class="col-sm-4 part1">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <a href="#/PersonalCenter/personalInfo?query=true" class="">
+                                <img src="{{base_url}}/assets/img/head6.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="info-box">
+                                <p class="user-name">{{sayhello()}}&nbsp;&nbsp;{{My.getUserName()}}</p>
+                                <p class="user-num"></p>
+                                <div class="level-info">
+                                    <!-- <div class=""> -->
+                                        <div class="level-icon slevel01"></div>
+                                        <div class="progress slevel02" style="float:right; width:70%; margin:1px">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated loged-progress-bar ivu-tooltip" style="width: 60%;">
+                                                <div class="ivu-tooltip-rel">
+                                                    <span class="progress-inner"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 part2">
+                    <div class="row">
+                        <div class="col-sm-4" style="text-align:center;padding-top:10px">
+                            <p>账号可用余额</p>
+                            <p class="">{{My.getMoney()}}</p>
+                        </div>
+                        <!-- <div class="col-sm-4">
+                            <span>全部余额: <span>0</span></span>
+                            <br>
+                            <span class="sc_count">锁定余额: <span>0</span></span>
+                        </div> -->
+                        <div class="col-sm-4">
+                                <a class="btn btn-danger" style="width: 100%" href="{{base_url}}/#/bank/deposit">充值</a><br>
+                                <a class="btn btn-primary" style="width: 100%; margin-top:5px" href="{{base_url}}/#/bank/withdraw">提现</a>
+                        </div>
+                        <div class="col-sm-4" style="text-align:center">
+                            <a>
+                                <div class="icon-jing icon" style=""></div><br>
+                                <span style="font-size:15px">查看交易记录&gt;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 part3">
+                    <span class="icon icon-dl"></span>
+                    <div><span>上次登录时间</span><br><span style="font-size:15px">{{My.getUpdateTime()}}</span></div>
+                </div>
+    
+            </div>
+          <!-- /.row -->
+          <div class="row info_middle_panel">
+            <div class="col-sm-12" style="border-bottom: 1px solid #e7e7e7;">
+                <h4 class="public-title" style="padding-top:20px">管理中心<span> Manage Center</span></h4>
+            </div>
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-3 part-left">
+                        <div class="nav-side-menu">
+                            <div class="menu-list">
+                                <ul id="menu-content" class="menu-content collapse out">
+                                    <li>
+                                        <a href="{{base_url}}/#/ucenter/index"><span class="icon icon-fk"></span> 个人资料 <span class="icon icon-arrowr"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{base_url}}/#/ucenter/myfpwd"><span class="icon icon-aq"></span> 安全设置 <span class="icon icon-arrowr"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{base_url}}/#/ucenter/notice"><span class="icon icon-fk"></span> 信息中心 <span class="icon icon-arrowr"></span></a>
+                                    </li>
+    
+                                    <!-- <li data-toggle="collapse" data-target="#money" class="collapsed">
+                                        <a href=""><span class="icon icon-jy"></span> 资金管理 <span class="icon icon-arrowr"></span></a>
+                                    </li>   -->
+                                    
+                                    <!-- <ul class="sub-menu collapse" id="money">
+                                        <li><a href="{{base_url}}/#/bank/deposit">存款</a></li>
+                                        <li><a href="{{base_url}}/#/bank/withdraw">取款</a></li>
+                                        <li><a href="{{base_url}}/#/bank/trans/1">存款记录</a></li>
+                                        <li><a href="{{base_url}}/#/bank/trans/2">取款记录</a></li>
+                                    </ul> -->
+
+                                    <li>
+                                        <a href="{{base_url}}/#/bank/deposit"><span class="icon icon-fk"></span> 存款 <span class="icon icon-arrowr"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{base_url}}/#/bank/withdraw"><span class="icon icon-fk"></span> 取款 <span class="icon icon-arrowr"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{base_url}}/#/bank/trans/1"><span class="icon icon-fk"></span> 存款记录 <span class="icon icon-arrowr"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{base_url}}/#/bank/trans/2"><span class="icon icon-fk"></span> 取款记录 <span class="icon icon-arrowr"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" ng-click="goPageCheckFundPwd('bank.bank')"><span class="icon icon-jy"></span> 银行账号 <span class="icon icon-arrowr"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{base_url}}/#/lottery/settled"><span class="icon icon-tz"></span> 今日已结 <span class="icon icon-arrowr"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{base_url}}/#/lottery/week"><span class="icon icon-tz"></span> 下注记录 <span class="icon icon-arrowr"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="mqqwpa://im/chat?chat_type=wpa&uin=qqqqqq&version=1&src_type=web&web_src=com" target="_blank"><span class="icon icon-td"></span> 客服 <span class="icon icon-arrowr"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                            <div class="p_change_pass">
+                                <h5 class="hotgame_mark">消息中心</h5>
+                            </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    
+        </div>
+    </ion-view>

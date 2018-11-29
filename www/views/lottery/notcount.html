@@ -1,0 +1,42 @@
+
+
+<ion-view view-title="即时注单" class="lottery-list">
+	<ion-nav-buttons side="left">
+    	<a class="button button-icon icon-prepage" ng-click="back();"></a>
+  	</ion-nav-buttons>
+	<!--*************************************************************-->
+		<ion-header-bar class="bar-header bar-positive bar" align-title="center">
+		<div class="buttons buttons-left" style="transition-duration: 0ms;">
+		<span class="left-buttons">
+    	<a style="margin-left:-3px;" href="javascript:history.back();" >
+    		<img src="/images/back1.png" alt="返回" style="vertical-align:middle;">	</a>
+  	        </span>
+		</div>
+		<div class="title title-center header-item" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); left: 60px; right: 60px;">即时注单</div>
+		<div class="buttons buttons-right" style="transition-duration: 0ms;">
+		<span class="right-buttons">
+			<a class="button ry-button" ng-click="logout();">退出</a>
+		</span>
+		</div>
+		</ion-header-bar>
+		<!--*************************************************************-->
+
+	<ion-content class="has-header" scroll="false">
+		<div class="row text-center no-title pm">
+			<div class="col col-33 radiu">彩种</div>
+			<div class="col col-33 radiu">注单笔数</div>
+			<div class="col col-33 radiu">下注金额</div>
+		</div>
+		
+		<ion-content class="list">
+			<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+			
+			<div ng-repeat="data in dataList" class="row text-center" ng-click="detail(data.id, data.name, data.count);">
+				<div class="col col-33 text-left tal ti"><div>{{data.name}}</div></div>
+				<div class="col col-33 text-center tal ti text-underline"><div>{{data.count}}</div></div>
+				<div class="col col-33 text-center tal ti"><div>{{data.money|money}}</div></div>
+			</div>
+			<div ng-show="!dataList" class="spinner-warp"><ion-spinner class="spinner spinner-ios"></ion-spinner></div>
+		</ion-content>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,90 @@
+<ion-content class="bet-view" scroll="false">
+<div id="gam1_1" class="tabcontent">
+	<div class="sub-Navs" item-class="col-31">
+		<ion-scroll id="sub-navs" direction="x" scrollbar-x="false" delegate-handle="sub-navs" ng-init="selectFirstSub();">
+			<div class="row" ng-init="shareData.subIndex=1">
+				<div class="col sub-col col-31" ng-class="{navActive:shareData.subIndex==1}">
+					<a class="item nav-item" ng-click="selectSubnav(1, $event);" data-id="8010003" min-size="3" max-size="10">三全中</a>
+				</div>
+				
+				<div class="col sub-col col-31" ng-class="{navActive:shareData.subIndex==2}">
+					<a class="item nav-item" ng-click="selectSubnav(2, $event);" data-id="8010001|7010002" min-size="3" max-size="7">三中二</a>
+				</div>
+				
+				<div class="col sub-col col-31" ng-class="{navActive:shareData.subIndex==3}">
+					<a class="item nav-item" ng-click="selectSubnav(3, $event);" data-id="8010004" min-size="2" max-size="7">二全中</a>
+				</div>
+				
+				<div class="col sub-col col-31" ng-class="{navActive:shareData.subIndex==4}">
+					<a class="item nav-item" ng-click="selectSubnav(4, $event);" data-id="8010005|7010006" min-size="2" max-size="7">二中特</a>
+				</div>
+				
+				<div class="col sub-col col-31" ng-class="{navActive:shareData.subIndex==5}">
+					<a class="item nav-item" ng-click="selectSubnav(5, $event);" data-id="8010007" min-size="2" max-size="7">特串</a>
+				</div>
+				
+				<div class="col sub-col col-31" ng-class="{navActive:shareData.subIndex==6}">
+					<a class="item nav-item" ng-click="selectSubnav(6, $event);" data-id="8010008" min-size="4" max-size="4">四全中</a>
+				</div>
+			</div>
+		</ion-scroll>
+	
+		<div class="nav-content">
+			<ion-content class="tp40" scroll="false">
+				<p>{{selectSub.text}}</p>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="1" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">01</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="2" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">02</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="3" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">03</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="4" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">04</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="5" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">05</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="6" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">06</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="7" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">07</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="8" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">08</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="9" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">09</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="10" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">10</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="11" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">11</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="12" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">12</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="13" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">13</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="14" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">14</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="15" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">15</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="16" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">16</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="17" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">17</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="18" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">18</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="19" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">19</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="20" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">20</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="21" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">21</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="22" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">22</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="23" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">23</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="24" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">24</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="25" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">25</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="26" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">26</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="27" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">27</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="28" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">28</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="29" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">29</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="30" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">30</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="31" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">31</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="32" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">32</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="33" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">33</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="34" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">34</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="35" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">35</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="36" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">36</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="37" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">37</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="38" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">38</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="39" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">39</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="40" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">40</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="41" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">41</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="42" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_b">42</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="43" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">43</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="44" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_g">44</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="45" ng-class="{special:shareData.odds.length>1}" value="0"><span class="ball_e_label ball_r">45</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="46" value="0"><span class="ball_e_label ball_r">46</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="47" value="0"><span class="ball_e_label ball_b">47</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="48" value="0"><span class="ball_e_label ball_b">48</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+				<button class="btn btn-danger-outline-gd sub-bet ok" data-id="49" value="0"><span class="ball_e_label ball_g">49</span><span class="r_ma bet-item">{{shareData.odds.join('/')}}</span></button>					
+					
+				
+			</ion-content>
+		</div>
+	</div>
+</div>
+</ion-content>

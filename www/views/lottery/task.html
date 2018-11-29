@@ -1,0 +1,233 @@
+<ion-view view-title="任务中心">
+
+
+    <div id="app" style="padding-bottom: 1.33333rem;">
+        <div class="isHeader isNav">
+            <div class="headerWrap">
+                <div class="vux-header header">
+                    <div class="vux-header-left">
+                        <a class="vux-header-back" ng-click="back();">返回</a>
+                        <div class="left-arrow" style=""></div>
+                    </div>
+                    <h1 class="vux-header-title">任务中心</h1>
+                    <!-- <div class="vux-header-right">
+                        <a href="#/setting" class="">设置</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="userInfo group-min-top">
+                <div class="col-sm-12">
+                    <div class="p_userinfo taskpanel">
+                        <span>
+                            <div>
+                                <div class="taskTab">
+                                    <div id="bt1" class="taskTitleActive">
+                                        <span ng-click="btval=1; BtClickHandler();">有奖任务</span>
+                                    </div>
+                                    <div id="bt2" class="">
+                                        <span ng-click="btval=2; BtClickHandler();">今日任务</span>
+                                    </div>
+                                    <div id="bt3" class="">
+                                        <span ng-click="btval=3; BtClickHandler();">任务达成</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                        <hr>
+                        
+                        <div ng-show="buttonStatus1">
+                            <div class="actRuleCon">
+                                <h1>活动规则说明</h1>
+                                <p>完成以下任意任务即可参与平台常规任务和每日签到活动：</p>
+                                <p class="text-gray">1. 当天累计充值达
+                                    <span class="text-red">100</span>元，当前累计充值
+                                    <span class="text-red">0</span>元，还差
+                                    <span class="text-red">100</span>元
+                                </p>
+                                <p class="text-gray">2. 当天累计投注达
+                                    <span class="text-red">1000</span>元，当前累计投注
+                                    <span class="text-red">0</span>元，还差
+                                    <span class="text-red">1000</span>元
+                                </p>
+                            </div>
+                        </div>
+                        <div ng-show="buttonStatus2">
+                            <div class="">
+                                
+                                <div class="taskList">
+                                    <div class="taskBox">
+                                        <div class="taskBoxLeft">
+                                            <div class="bgColor0">
+                                                <img src="{{base_url}}/assets/img/note.png" alt="">
+                                            </div>
+                                            <div>单次充值<p><span>+5</span>元宝</p></div>
+                                            <div class="taskBoxRight">
+                                                <div class="taskBoxState">0/1</div>
+                                                <a href="#/bank/deposit" class="">
+                                                    <div class="taskBoxBtn taskBoxBtn2">去充值</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="taskBoxText">1.每日充值达1000元宝1次获得5元宝奖励<br>2.当日未达到充值金额，次日将清空当日的充值金额重新计算<br>3.该任务每日只能完成一次</div>
+                                        
+                                    </div>
+                                    <div class="taskBox">
+                                        <div class="taskBoxLeft">
+                                            <div class="bgColor1">
+                                                <img src="{{base_url}}/assets/img/note.png" alt="">
+                                            </div>
+                                            <div>累计充值<p><span>+50</span>元宝</p></div>
+                                            <div class="taskBoxRight">
+                                                <div class="taskBoxState">0/50000</div>
+                                                <a href="#/bank/deposit" class="">
+                                                    <div class="taskBoxBtn taskBoxBtn2">去充值</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="taskBoxText">1.每日充值总额达50000元宝获得50元宝奖励<br>2.当日未达到充值总额，次日将清空当日的充值总额重新计算<br>3.该任务每日只能完成一次</div>
+                                        
+                                    </div>
+                                    <div class="taskBox">
+                                        <div class="taskBoxLeft">
+                                            <div class="bgColor2">
+                                                <img src="{{base_url}}/assets/img/note.png" alt="">
+                                            </div>
+                                            <div>投注幸运28<p><span>+10</span>元宝</p></div>
+                                            <div class="taskBoxRight">
+                                                <div class="taskBoxState">0/1000</div>
+                                                <div class="taskBoxBtn taskBoxBtn2">去投注</div>
+                                            </div>
+                                        </div>
+                                        <div class="taskBoxText">1.每日投注达幸运28彩种1000元宝1次获得10元宝奖励<br>2.当日未达到投注金额，次日将清空当日的投注金额重新计算<br>3.该任务每日只能完成一次</div>
+                                        
+                                    </div>
+                                    <div class="taskBox">
+                                        <div class="taskBoxLeft">
+                                            <div class="bgColor3">
+                                                <img src="{{base_url}}/assets/img/note.png" alt="">
+                                            </div>
+                                            <div>投注加拿大28<p><span>+10</span>元宝</p></div>
+                                            <div class="taskBoxRight">
+                                                <div class="taskBoxState">0/1000</div>
+                                                <div class="taskBoxBtn taskBoxBtn2">去投注</div>
+                                            </div>
+                                        </div>
+                                        <div class="taskBoxText">1.每日投注加拿大28彩种达1000元宝获得10元宝奖励<br>2.当日未达到投注总额，次日将清空当日的投注总额重新计算<br>3.该任务每日只能完成一次</div>
+                                        
+                                    </div>
+                                    <div class="taskBox">
+                                        <div class="taskBoxLeft">
+                                            <div class="bgColor4">
+                                                <img src="{{base_url}}/assets/img/note.png" alt="">
+                                            </div>
+                                            <div>投注急速赛车<p><span>+10</span>元宝</p></div>
+                                            <div class="taskBoxRight">
+                                                <div class="taskBoxState">0/1000</div>
+                                                <div class="taskBoxBtn taskBoxBtn2">去投注</div>
+                                            </div>
+                                        </div>
+                                        <div class="taskBoxText">1.每日投注急速PK10彩种达1000元宝获得10元宝奖励<br>2.当日未达到投注总额，次日将清空当日的投注总额重新计算<br>3.该任务每日只能完成一次</div>
+                                        
+                                    </div>
+                                    <div class="taskBox">
+                                        <div class="taskBoxLeft">
+                                            <div class="bgColor5">
+                                                <img src="{{base_url}}/assets/img/note.png" alt="">
+                                            </div>
+                                            <div>投注三分彩<p><span>+10</span>元宝</p></div>
+                                            <div class="taskBoxRight">
+                                                <div class="taskBoxState">0/1000</div>
+                                                <div class="taskBoxBtn taskBoxBtn2">去投注</div>
+                                            </div>
+                                        </div>
+                                        <div class="taskBoxText">1.每日投注三分彩彩种达1000元宝获得10元宝奖励<br>2.当日未达到投注总额，次日将清空当日的投注总额重新计算<br>3.该任务每日只能完成一次</div>
+                                        
+                                    </div>
+                                    <div class="taskBox">
+                                        <div class="taskBoxLeft">
+                                            <div class="bgColor6">
+                                                <img src="{{base_url}}/assets/img/note.png" alt="">
+                                            </div>
+                                            <div>投注急速六合彩<p><span>+10</span>元宝</p></div>
+                                            <div class="taskBoxRight">
+                                                <div class="taskBoxState">0/1000</div>
+                                                <div class="taskBoxBtn taskBoxBtn2">去投注</div>
+                                            </div>
+                                        </div>
+                                        <div class="taskBoxText">1.每日投注急速六合彩彩种达1000元宝获得10元宝奖励<br>2.当日未达到投注总额，次日将清空当日的投注总额重新计算<br>3.该任务每日只能完成一次</div>
+                                        
+                                    </div>
+                                    <div class="taskBox">
+                                        <div class="taskBoxLeft">
+                                            <div class="bgColor7">
+                                                <img src="{{base_url}}/assets/img/note.png" alt="">
+                                            </div>
+                                            <div>投注百人牛牛<p><span>+10</span>元宝</p></div>
+                                            <div class="taskBoxRight">
+                                                <div class="taskBoxState">0/1000</div>
+                                                <div class="taskBoxBtn taskBoxBtn2">去投注</div>
+                                            </div>
+                                        </div>
+                                        <div class="taskBoxText">1.每日投注百人牛牛达1000元宝获得10元宝奖励<br>2.当日未达到投注总额，次日将清空当日的投注总额重新计算<br>3.该任务每日只能完成一次</div>
+                                        
+                                    </div>
+                                    <div class="taskBox">
+                                        <div class="taskBoxLeft">
+                                            <div class="bgColor8">
+                                                <img src="{{base_url}}/assets/img/note.png" alt="">
+                                            </div>
+                                            <div>投注分分彩<p><span>+10</span>元宝</p></div>
+                                            <div class="taskBoxRight">
+                                                <div class="taskBoxState">0/1000</div>
+                                                <div class="taskBoxBtn taskBoxBtn2">去投注</div>
+                                            </div>
+                                        </div>
+                                        <div class="taskBoxText">1.每日投注分分彩达1000元宝获得10元宝奖励<br>2.当日未达到投注总额，次日将清空当日的投注总额重新计算<br>3.该任务每日只能完成一次</div>
+                                        
+                                    </div>
+                                    <p style="color: rgb(153, 153, 153);">注释：任务达成总个数依据今日任务完成数计算，次日将重置计算，未领取的奖励皆为失效处理，本活动的最终解释权归本公司所有</p>
+                                </div>
+                
+                            </div>
+                        </div>
+                        <div ng-show="buttonStatus3">
+                                <div class="taskList">
+                                    <div class="taskBox">
+                                        <div class="taskBoxLeft">
+                                            <div class="bgColor0">
+                                                <img src="{{base_url}}/assets/img/note.png" alt="">
+                                            </div>
+                                            <div>任务达成数3<p><span>+8</span>元宝</p></div>
+                                            <div class="taskBoxRight">
+                                                <div class="taskBoxState">0/3</div>
+                                                <div class="taskBoxBtn taskBoxBtn4">领取奖励</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="taskBoxText">1.每日任务达成数为3获得8元宝<br>2.次日任务重置计算</div>
+                                        
+                                    </div>
+                                    <div class="taskBox">
+                                        <div class="taskBoxLeft">
+                                            <div class="bgColor1">
+                                                <img src="{{base_url}}/assets/img/note.png" alt="">
+                                            </div>
+                                            <div>任务达成数7<p><span>+18</span>元宝</p></div>
+                                            <div class="taskBoxRight">
+                                                <div class="taskBoxState">0/7</div>
+                                                <div class="taskBoxBtn taskBoxBtn4">领取奖励</div>
+                                            </div>
+                                        </div>
+                                        <div class="taskBoxText">1.每日任务达成数为7得18元宝<br>2.次日任务重置计算</div>
+                                        
+                                    </div>
+                                    <p style="color: rgb(153, 153, 153);">注释：任务达成总个数依据今日任务完成数计算，次日将重置计算，未领取的奖励皆为失效处理，本活动的最终解释权归本公司所有</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-view>

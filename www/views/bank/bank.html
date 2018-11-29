@@ -1,0 +1,117 @@
+<ion-view view-title="资金管理" >
+
+	<div id="app" style="padding-bottom: 1.33333rem;">
+		<div class="isHeader isNav">
+			<div class="headerWrap">
+				<div class="vux-header header">
+					<div class="vux-header-left">
+						<a class="vux-header-back" ng-click="back();">返回</a>
+						<div class="left-arrow" style="display: none;"></div>
+					</div>
+					<h1 class="vux-header-title">资金管理</h1>
+					<!-- <div class="vux-header-right">
+						<a href="#/setting" class="">设置</a>
+					</div> -->
+				</div>
+			</div>
+			<div class="vux-flexbox userInfo userInfo-wrapper vux-flex-row">
+				<div class="vux-flexbox-item item-left">
+					<img src="../../img/head6.png" class="avatar">
+					<div class="grade">
+						<img src="../../img/huimark.png" alt="">
+					</div>
+				</div>
+				<div class="vux-flexbox-item item-middle">
+					<h3><span>{{My.getUserName()}}</span></h3>
+					<p><i class="person-edit"></i>
+						<span>编辑个人资料</span>
+					</p>
+					<h3><span>{{My.getMoney()}}</span></h3>
+				</div>
+				<div class="vux-flexbox-item item-right">
+					<a href="#/vipLevel" class="">
+						<div class="honor-badge-icon" style="animation-name: myalter01;"></div>
+					</a>
+				</div>
+			</div>
+			<div class="userInfo group-min-top">
+				<div class="col-sm-12">
+					<div class="p_userinfo">
+						<h5 class="hotgame_mark"> 银行账号 </h5>
+						<ion-content class="m-center m-info m-bank" scroll="false">
+						<div class="padding col-sm-6" style="float: none;  margin: 0 auto; padding-top:50px; text-align:center" ng-if="step==0">
+							<img src="{{base_url}}/assets/img/withdraw.png" width="180px"><hr>
+							<a class="btn btn-danger ng-binding" ng-click="addBank()" style="color:#fff">建立银行账号</a>
+						</div>
+						<div class="padding col-sm-4" ng-if="step==2 || step==3" style="float: none;  margin: 0 auto; padding-top:20px; text-align:center">
+							<form name="mdfBankForm" novalidate	ng-submit="mdfBankForm.$valid?mdfBank(mdfBankData):'return false'">
+								<div class="list">
+									<select class="form-control form-control-sm spad" name='bankId' ng-model="mdfBankData.bankId">
+										<option ng-repeat="bitem in bankList" value="{{bitem.id}}">{{bitem.name}}</option>
+									</select>
+									<p class="item-warn text-assertive " style="color:#e00" ng-show="(mdfBankForm.$submitted || mdfBankForm.bankName.$touched)&&(mdfBankForm.bankName.$error.required)">*请选择银行</p>
+									<div class="item item-input spad">
+										<input ng-if="step==2"  type="text" name="address" ng-model="mdfBankData.address" placeholder="请输入开户网点" required ng-pattern="/^\S{1,30}$/" class="reset-field form-control form-control-sm"/>
+										<input ng-if="step==3" type="text" name="address" ng-model="mdfBankData.address" placeholder="{{mdfBankData.addressTip}}" required ng-pattern="/^\S{1,30}$/" class="reset-field form-control form-control-sm"/>
+									</div>
+									<p class="item-warn2 text-assertive " style="color:#e00" ng-show="(mdfBankForm.$submitted || mdfBankForm.address.$touched)&&mdfBankForm.address.$error.required">*请填写开户网点</p>
+									<p class="item-warn2 text-assertive " style="color:#e00" ng-show="(mdfBankForm.$submitted || mdfBankForm.address.$touched)&&mdfBankForm.address.$error.pattern">*请输入30位以内的字符</p>
+									<div class="item item-input spad">
+										<input ng-if="step==2" type="text" class="uc-set-scroll reset-field form-control form-control-sm" name="cardNo" ng-model="mdfBankData.cardNo" placeholder="请输入银行卡号" required ng-pattern="/^[0-9]{6,19}$/" />
+										<input ng-if="step==3" type="text" class="uc-set-scroll reset-field form-control form-control-sm" name="cardNo" ng-model="mdfBankData.cardNo" placeholder="{{mdfBankData.cardNoTip}}" required ng-pattern="/^[0-9]{6,19}$/" />
+									</div>
+									<p class="item-warn2 text-assertive " style="color:#e00" ng-show="(mdfBankForm.$submitted || mdfBankForm.cardNo.$touched)&&(mdfBankForm.cardNo.$error.required)">*请填写银行卡号</p>
+									<p class="item-warn2 text-assertive " style="color:#e00" ng-show="(mdfBankForm.$submitted || mdfBankForm.cardNo.$touched)&&(mdfBankForm.cardNo.$error.pattern)">*请输入6至19位的数字</p>
+								</div>
+								<div class="padding">
+									<p>
+										开户姓名：<span>{{My.getFullName()}}</span>
+									</p>
+									<button type="submit" ng-disabled="mdfBankForm.$invalid" class="btn btn-danger col-sm-6" ng-click="bindBank()">确定</button>
+								</div>
+							</form>
+						</div>
+						<div class="list list-bank" ng-if="step==1">
+							<div class="item item-avatar bank-round" style="float:none; margin: auto; text-align: center; padding-top:30px">
+								
+								<div class="row">
+									<div class="col">
+										<p>
+											<span>开户姓名</span>： <span>{{My.getFullName()}}</span>
+										</p>
+										<p>
+											<span>开户账号</span>： <span>{{My.getBank().cardNo}}</span>
+										</p>
+										<p>
+											<span>开户网点</span>： <span>{{My.getBank().subAddress}}</span>
+										</p>
+									</div>
+								</div>
+								<div class="row">
+									<!--<div class="col col-66">
+										<img ng-src="/images/bank/{{bankIcon[My.getBank().bankName]}}.png" />
+									</div>-->
+									<div class="col-sm-6" style="float:none; margin: auto; text-align:center">
+										<a class="btn btn-danger" style="color:#fff" ng-click="setStep(3);">更换银行卡</a>
+										<a href="javascript:history.back();" class="btn btn-primary" style="color:#fff">返回</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+						</ion-content>
+						<script id="realname-template" type="text/ng-template">
+							<div class="info-mdf-tip">请务必填写真实姓名(<span class="text-assertive">填写后不可修改</span>)</div>
+							<div class="row">
+								<div class="col">
+									<div class="item item-input"><input type="text" class="txt-info reset-field" name="realname" ng-model="modalData.realname" ng-pattern="/[\u4e00-\u9fa5]{2,5}$/" placeholder="真实姓名"></div>
+								</div>
+							</div>
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-view>

@@ -1,0 +1,1 @@
+var CONFIG_MAP = {"trialGamePro":"0","regFilterName":"\u6d4b\u8bd5","lhcWxJin":"0","lhcWxMu":"0","lhcWxShui":"0","lhcWxHuo":"0","lhcWxTu":"0","zxkfUrl":"0","defaultSkin":"0","mainQQUrl":"0","mainWxUrl":"0","mainPhone":"0","mainCustomerQQ":"0","mainAgentQQ":"0","mainEmail":"0","withdrawNumTotal":"7","showKjzb":"\/","regUqFullName":"0"}

@@ -1,0 +1,108 @@
+<ion-view view-title="资金管理">
+
+    <div id="app" style="padding-bottom: 1.33333rem;">
+        <div class="isHeader isNav">
+            <div class="headerWrap">
+                <div class="vux-header header">
+                    <div class="vux-header-left">
+                        <a class="vux-header-back" ng-click="back();">返回</a>
+                        <div class="left-arrow" style="display: none;"></div>
+                    </div>
+                    <h1 class="vux-header-title">资金管理</h1>
+                    <!-- <div class="vux-header-right">
+                        <a href="#/setting" class="">设置</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="vux-flexbox userInfo userInfo-wrapper vux-flex-row">
+                <div class="vux-flexbox-item item-left">
+                    <img src="../../img/head6.png" class="avatar">
+                    <div class="grade">
+                        <img src="../../img/huimark.png" alt="">
+                    </div>
+                </div>
+                <div class="vux-flexbox-item item-middle">
+                    <h3><span>{{My.getUserName()}}</span></h3>
+                    <p><i class="person-edit"></i>
+                        <span>编辑个人资料</span>
+                    </p>
+                    <h3><span>{{My.getMoney()}}</span></h3>
+                </div>
+                <div class="vux-flexbox-item item-right">
+                    <a href="#/vipLevel" class="">
+                        <div class="honor-badge-icon" style="animation-name: myalter01;"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="userInfo group-min-top">
+                <div class="col-sm-12">
+                    <div class="p_deposit">
+                        <h5 class="hotgame_mark">存款记录 / 取款记录</h5>
+                        <ion-content class="m-center m-info m-cash" scroll="false">
+
+                            <div class="tab-content text-center table-list t-white" style="border: 1px solid #e9eaec;">
+                                <div class="row text-center no-title pm" style="padding:5px; background-color:#ededed; margin: 0px !important; border-bottom: 1px solid #e9eaec;">
+                                    <div class="col col-40 radiu">时间</div>
+                                    <div class="col col-30 radiu">金额</div>
+                                    <div class="col col-30 radiu">状态</div>
+                                </div>
+                                
+                                <ion-content class="list" style="top: 8rem" scroll="false">
+                                    <div ng-if="type == 1" ng-repeat="item in dataList" class="row text-center" style=" margin: 0px !important; padding:5px; border-bottom: 1px solid #e9eaec;" ng-click="showDetail(item);">
+                                        <div class="col col-40 text-center tal ti">{{item.rechTime|stime}}</div>
+                                        <div class="col col-30 text-center tal ti">{{item.rechMoney}}</div>
+                                        <div class="col col-30 text-center tal ti">{{RECH_STATUS[item.status]}}</div>
+                                    </div>
+                                    <div ng-if="type == 2" ng-repeat="item in dataList" class="row text-center" style="  margin: 0px !important; padding:5px; border-bottom: 1px solid #e9eaec;" ng-click="showDetail(item);">
+                                        <div class="col col-40 text-center tal ti">{{item.applyTime|stime}}</div>
+                                        <div class="col col-30 text-center tal ti">{{item.applyMoney}}</div>
+                                        <div class="col col-30 text-center tal ti">{{CHECK_STATUS[item.checkStatus]}}</div>
+                                    </div>
+                                    <div ng-if="dataList.length == 0" class="empty-tip">暂无数据</div>
+                                    <div ng-show="!dataList" class="spinner-warp"><ion-spinner class="spinner spinner-ios"></ion-spinner></div>
+                                    <ion-infinite-scroll ng-if="isMore" on-infinite="{{ queryData() }}" icon="ion-loading-c" distance="1%"></ion-infinite-scroll>
+                                </ion-content>
+                            </div>
+    
+    
+                            <script id="rech-detail.html" type="text/ng-template">
+                                <div class="trans-detail">
+                                    <p>交易编号：{{item.orderNo}}</p>
+                                    <p>发起时间：{{item.addTime}}</p>
+                                    <p>交易类型：{{item.rechType=='adminAddMoney'?"系统加钱":"充值"}} </p>
+                                    <p>交易金额：{{item.rechMoney||0}}</p>
+                                    <p ng-if="item.rebateMoney">活动奖励金额：{{item.rebateMoney}}</p>
+                                    <p>手续费用：0</p>
+                                    <p>交易状态：{{RECH_STATUS[item.status]}} </p>
+                                    <p>充值方式：{{RECH_TYPE[item.rechType]}}</p>
+                                    <p>卡号：{{item.payee}}</p>
+                                    <p>持卡人：{{item.payeeName || ThirdChannels[rechDescData.thirdChannel]}}</p>
+                                    <p>存款人：{{item.userName}}</p>
+                                    <p>存款时间：{{item.rechTime}}</p>
+                                    <p ng-if="item.remark">备注：{{item.remark}}</p>
+                                </div>
+                            </script>
+                            
+                            <script id="withdraw-detail.html" type="text/ng-template">
+                                <div class="trans-detail">
+                                    <p>交易编号：{{item.orderNo}}</p>
+                                    <p>发起时间：{{item.applyTime}}</p>
+                                    <p>交易类型：{{item.channel==2?"系统扣钱":"提现"}} </p>
+                                    <p>交易金额：{{item.applyMoney||0}}</p>
+                                    <p>手续费用：0</p>
+                                    <p>交易状态：{{CHECK_STATUS[item.checkStatus]}} </p>
+                                    <p>提现银行：{{item.bankName}} </p>
+                                    <p>提款卡号：{{item.bankCard}}</p>
+                                    <p>持卡人：{{item.bankAccount}}</p>
+                                    <!--<p>审核时间：{{item.operatorTime||"未审核"}}</p>-->
+                                    <p ng-if="item.reason">备注：{{item.reason}}</p>
+                                </div>
+                            </script>
+                        </ion-content>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-view>

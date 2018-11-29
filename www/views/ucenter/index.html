@@ -1,0 +1,179 @@
+<ion-view class="m-center">
+
+
+        <div id="app" style="padding-bottom: 1.33333rem;">
+            <div class="isHeader isNav">
+                <div class="headerWrap">
+                    <div class="vux-header header">
+                        <div class="vux-header-left">
+                            <a class="vux-header-back" style="display: none;">返回</a>
+                            <div class="left-arrow" style="display: none;"></div>
+                        </div>
+                        <h1 class="vux-header-title">个人中心</h1>
+                        <div class="vux-header-right">
+                            <a ng-click="logout()" class="">安全退出</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="vux-flexbox userInfo userInfo-wrapper vux-flex-row">
+                    <div class="vux-flexbox-item item-left">
+                        <img src="../../img/head6.png" class="avatar">
+                        <div class="grade">
+                            <img src="../../img/huimark.png" alt="">
+                        </div>
+                    </div>
+                    <div class="vux-flexbox-item item-middle">
+                        <h3><span>{{My.getUserName()}}</span></h3>
+                        <p><i class="person-edit"></i>
+                            <span>编辑个人资料</span>
+                        </p>
+                        <h3><span>{{My.getMoney()}}</span></h3>
+                    </div>
+                    <div class="vux-flexbox-item item-right">
+                        <a href="#/vipLevel" class="">
+                            <div class="honor-badge-icon" style="animation-name: myalter01;"></div>
+                        </a>
+                    </div>
+                </div>
+                <!-- <div class="top-group">
+                    <div class="weui-cells vux-no-group-title">
+                        <div class="vux-flexbox honor-wrap vux-flex-row">
+                            <div class="vux-flexbox-item text-center" style="flex: 0 0 16.6667%;">
+                                <img src="htt1.png" alt="" class="honor-icon">
+                                <p>0</p>
+                            </div>
+                            <div class="vux-flexbox-item">
+                                <div class="vux-flexbox integral-info vux-flex-row">
+                                    <div class="vux-flexbox-item text-center text-gray" style="margin-left: 8px;">我的积分:<em>0</em></div>
+                                    <div class="vux-flexbox-item text-center text-gray" style="margin-left: 8px;">
+                                        <span>距升级还差:<em>4999</em></span>
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <span class="progress-inner" style="width: 0%;"></span>
+                                </div>
+                            </div>
+                            <div class="vux-flexbox-item text-center" style="flex: 0 0 16.6667%;">
+                                <img src="https://www-pc3333.com/up_files/honor/sbadge02.png" alt="" class="honor-icon">
+                                <p>4999</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="userInfo group-min-top">
+                    <div class="weui-cells vux-no-group-title">
+                        <!-- <div class="weui-cell vux-tap-active weui-cell_access">
+                            <div class="weui-cell__hd"><i class="cell-icon cell-icon-focus"></i></div>
+                            <div class="vux-cell-bd vux-cell-primary">
+                                <p><label class="vux-label">个人资料</label> </p>
+                                <span class="vux-label-desc"></span>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </div> -->
+                        
+                        <a class="weui-cell vux-tap-active weui-cell_access" href="#/ucenter/intro">
+                            <div class="weui-cell__hd"><i class="cell-icon cell-icon-wallet"></i></div>
+                                <div class="vux-cell-bd vux-cell-primary">
+                                    <p><label class="vux-label">钱包</label></p>
+                                    <span class="vux-label-desc"></span>
+                                </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+
+                        <a class="weui-cell vux-tap-active weui-cell_access" href="#/ucenter/myfpwd">
+                            <div class="weui-cell__hd"><i class="cell-icon cell-icon-paysafe"></i></div>
+                                <div class="vux-cell-bd vux-cell-primary">
+                                    <p><label class="vux-label">安全设置</label></p>
+                                    <span class="vux-label-desc"></span>
+                                </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="userInfo group-min-top">
+                    <div class="weui-cells vux-no-group-title">
+                        <a href="#/ucenter/agentrole" class="weui-cell vux-tap-active weui-cell_access">
+                            <div class="weui-cell__hd"><i class="cell-icon cell-icon-agency"></i></div>
+                            <div class="vux-cell-bd vux-cell-primary">
+                                <p><label class="vux-label">代理制度</label> </p>
+                                <span class="vux-label-desc"></span>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a href="#/ucenter/agentshare" class="weui-cell vux-tap-active weui-cell_access">
+                            <div class="weui-cell__hd"><i class="cell-icon cell-icon-share"></i></div>
+                            <div class="vux-cell-bd vux-cell-primary">
+                                <p><label class="vux-label">代理分享</label> </p>
+                                <span class="vux-label-desc"></span>
+                            </div>
+                            <div class="weui-cell__ft">
+                                <img src="../../img/barcode.png" class="share-code">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="userInfo group-min-top">
+                    <div class="weui-cells vux-no-group-title">
+                        <a href="#/lottery/settled" class="weui-cell vux-tap-active weui-cell_access">
+                            <div class="weui-cell__hd"><i class="cell-icon cell-icon-tzrecord"></i></div>
+                            <div class="vux-cell-bd vux-cell-primary">
+                                <p><label class="vux-label">今日已结</label> </p>
+                                <span class="vux-label-desc"></span>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a href="#/lottery/week" class="weui-cell vux-tap-active weui-cell_access">
+                            <div class="weui-cell__hd"><i class="cell-icon cell-icon-tzrecord"></i></div>
+                            <div class="vux-cell-bd vux-cell-primary">
+                                <p><label class="vux-label">下注记录</label> </p>
+                                <span class="vux-label-desc"></span>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="userInfo group-min-top">
+                    <div class="weui-cells vux-no-group-title">
+                        <a href="#/lottery/task" class="weui-cell vux-tap-active weui-cell_access">
+                            <div class="weui-cell__hd"><i class="cell-icon cell-icon-target"></i></div>
+                            <div class="vux-cell-bd vux-cell-primary">
+                                <p><label class="vux-label">任务中心</label> </p>
+                                <span class="vux-label-desc"></span>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a href="#/lottery/huodong" class="weui-cell vux-tap-active weui-cell_access">
+                            <div class="weui-cell__hd"><i class="cell-icon cell-icon-act1"></i></div>
+                            <div class="vux-cell-bd vux-cell-primary">
+                                <p><label class="vux-label">活动中心</label> </p>
+                                <span class="vux-label-desc"></span>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <div class="userInfo vux-x-dialog public-dialog upgrade-dialog">
+                    <div class="weui-mask" style="display: none;"></div>
+                    <div class="weui-dialog" style="display: none;">
+                        <div class="upgrade-con text-center">
+                            <p>
+                                <img src="d=" alt="" class="upgrade-info">
+                            </p>
+                            <p>
+                                <img src="./static/img/badge01@2x.9ba2135.png" alt="" class="upgrade-badge">
+                            </p>
+                            <p>
+                                <img src="./static/img/fame01@2x.b2dd539.png" alt="" class="upgrade-name">
+                            </p>
+                        </div>
+                        <div class="beam"></div>
+                        <span class="close-icon"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</ion-view>

@@ -1,0 +1,106 @@
+<ion-view view-title="资金管理">
+
+    <div id="app" style="padding-bottom: 1.33333rem;">
+        <div class="isHeader isNav">
+            <div class="headerWrap">
+                <div class="vux-header header">
+                    <div class="vux-header-left">
+                        <a class="vux-header-back" ng-click="back();">返回</a>
+                        <div class="left-arrow" style="display: none;"></div>
+                    </div>
+                    <h1 class="vux-header-title">资金管理</h1>
+                    <!-- <div class="vux-header-right">
+                        <a href="#/setting" class="">设置</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="vux-flexbox userInfo userInfo-wrapper vux-flex-row">
+                <div class="vux-flexbox-item item-left">
+                    <img src="../../img/head6.png" class="avatar">
+                    <div class="grade">
+                        <img src="../../img/huimark.png" alt="">
+                    </div>
+                </div>
+                <div class="vux-flexbox-item item-middle">
+                    <h3><span>{{My.getUserName()}}</span></h3>
+                    <p><i class="person-edit"></i>
+                        <span>编辑个人资料</span>
+                    </p>
+                    <h3><span>{{My.getMoney()}}</span></h3>
+                </div>
+                <div class="vux-flexbox-item item-right">
+                    <a href="#/vipLevel" class="">
+                        <div class="honor-badge-icon" style="animation-name: myalter01;"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="userInfo group-min-top">
+                <div class="col-sm-12">
+                    <div class="p_deposit">
+                        <h5 class="hotgame_mark">资金管理 / 取款</h5>
+                        <ion-content class="m-center m-info m-cash" scroll="false">
+                        <div class="withdraw" ng-if="withdrawStep==1">
+                            <div class="row row-center responsive-sm">
+                                <div class="col responsive-mess"></div>
+                                <div class="col-100 responsive-txt">
+                                    您还没完善个人信息
+                                </div>
+                                <div class="col responsive-btn">
+                                    <a ng-click="showRealNameModal('完善个人信息', withdrawPageGetBankCallback)" class="button button-block button-positive">完善个人信息</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="withdraw" ng-if="withdrawStep==2">
+                            <div class="row-center responsive-sm" style="text-align:center; float: none;  margin: 0 auto;">
+                                <div class="col responsive-recard"></div>
+                                <div><img src="{{base_url}}/assets/img/alert_p.png" width="160px"></div>
+                                <div class="col-responsive-txt" style="color:#e00">您还未绑定出款银行卡</div><br>
+                                <div class="col-sm-3 responsive-btn" style="text-align:center; float: none;  margin: 0 auto;">
+                                    <a href="#/bank/bank" class="btn btn-primary form-control form-control-sm">绑定银行卡</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div ng-if="withdrawStep==3" class="withdraw">
+                            <div class="tab-bable">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" style="text-align:center; float: none;  margin: auto; margin-top:30px">
+                                        <div class="item item-input row">
+                                            <input class="form-control form-control-sm col-sm-4" type="tel" style="text-align:center; float: none;  margin: auto;" name="applyMoney" required ng-model="withdrawData.applyMoney" reset-field
+                                                ng-keyup="parseIntMoneyInWithdrawPage($event)" placeholder="请填写取款金额">
+                                        </div>
+                                        <p class="item-warn" style="color:#e00">*单笔下限100，上限1000000</p>
+                                    <!-- 	<div class="item item-input">
+                                            <input class="uc-set-scroll" />
+                                        </div> -->
+                                        <div class="item item-input">
+                                            <label style="height: 34px; vertical-align: middle; font-size: 20px; line-height: 34px;"
+                                                ng-bind="My.getBank().bankName + ' : ' + My.getBank().cardNo + ' : ' + My.getFullName()"/>
+                                        </div>
+                                        <div class="item item-input">
+                                            <input class="form-control form-control-sm col-sm-4" type="password" required maxlength="20" ng-model="withdrawData.withdrawPwd" placeholder="请填写取款密码" style="text-align:center; float: none;  margin: auto; margin-bottom:30px">
+                                        </div>
+                                        <button id="btnWithdraw" class="btn btn-primary form-control form-control-sm col-sm-3" ng-click="withdrawSubmit()">确认提交</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script id="realname-template" type="text/ng-template">
+                            <div class="info-mdf-tip">请务必填写真实姓名(<span class="text-assertive">填写后不可修改</span>)</div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="item item-input"><input type="text" class="txt-info reset-field" name="realname" ng-model="modalData.realname" ng-pattern="/[\u4e00-\u9fa5]{2,5}$/" placeholder="真实姓名"></div>
+                                </div>
+                            </div>
+                        </script>
+
+                        </ion-content>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-view>

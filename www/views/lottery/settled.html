@@ -1,0 +1,79 @@
+<ion-view view-title="今日已结" class="lottery-list">
+
+    <div id="app" style="padding-bottom: 1.33333rem;">
+        <div class="isHeader isNav">
+            <div class="headerWrap">
+                <div class="vux-header header">
+                    <div class="vux-header-left">
+                        <a class="vux-header-back" ng-click="back();">返回</a>
+                        <div class="left-arrow"></div>
+                    </div>
+                    <h1 class="vux-header-title">今日已结</h1>
+                    <!-- <div class="vux-header-right">
+                        <a href="#/setting" class="">设置</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="vux-flexbox userInfo userInfo-wrapper vux-flex-row">
+                <div class="vux-flexbox-item item-left">
+                    <img src="../../img/head6.png" class="avatar">
+                    <div class="grade">
+                        <img src="../../img/huimark.png" alt="">
+                    </div>
+                </div>
+                <div class="vux-flexbox-item item-middle">
+                    <h3><span>{{My.getUserName()}}</span></h3>
+                    <p><i class="person-edit"></i>
+                        <span>编辑个人资料</span>
+                    </p>
+                    <h3><span>{{My.getMoney()}}</span></h3>
+                </div>
+                <div class="vux-flexbox-item item-right">
+                    <a href="#/vipLevel" class="">
+                        <div class="honor-badge-icon" style="animation-name: myalter01;"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="userInfo group-min-top">
+                <div class="col-sm-12">
+                    <div class="p_daily_record">
+                        <h5 class="hotgame_mark" style="float:left;">今日已结</h5>
+                        <div>
+                            <div class="u_block table-responsive">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>期号</th>
+                                            <th>下注明细</th>
+                                            <th>下注金额</th>
+                                            <th>输赢金额</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="data in dataList">
+                                            <td>{{$index + 1}}</td>
+                                            <td><div ng-bind-html="data.turnNum"></div></td>
+                                            <td><div ng-bind-html="data.detail"></div></td>
+                                            <td>{{data.money|money}}</td>
+                                            <td>{{data.resultMoney|money}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <label ng-if="dataList.length == 0"> 暂无数据 </label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span class="label btn-danger" style="padding: 8px; border-radius: 5px">下注金额：<span class="badges_m">{{totalBetMoney}}</span></span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="label btn-primary" style="padding: 8px; border-radius: 5px">输赢金额：<span class="badges_m">{{totalResultMoney}}</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-view>

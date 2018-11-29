@@ -1,0 +1,77 @@
+<ion-view view-title="下注记录">
+
+    <div id="app" style="padding-bottom: 1.33333rem;">
+        <div class="isHeader isNav">
+            <div class="headerWrap">
+                <div class="vux-header header">
+                    <div class="vux-header-left">
+                        <a class="vux-header-back" ng-click="back();">返回</a>
+                        <div class="left-arrow" ></div>
+                    </div>
+                    <h1 class="vux-header-title">下注记录</h1>
+                    <!-- <div class="vux-header-right">
+                        <a href="#/setting" class="">设置</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="vux-flexbox userInfo userInfo-wrapper vux-flex-row">
+                <div class="vux-flexbox-item item-left">
+                    <img src="../../img/head6.png" class="avatar">
+                    <div class="grade">
+                        <img src="../../img/huimark.png" alt="">
+                    </div>
+                </div>
+                <div class="vux-flexbox-item item-middle">
+                    <h3><span>{{My.getUserName()}}</span></h3>
+                    <p><i class="person-edit"></i>
+                        <span>编辑个人资料</span>
+                    </p>
+                    <h3><span>{{My.getMoney()}}</span></h3>
+                </div>
+                <div class="vux-flexbox-item item-right">
+                    <a href="#/vipLevel" class="">
+                        <div class="honor-badge-icon" style="animation-name: myalter01;"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="userInfo group-min-top">
+                <div class="col-sm-12">
+                    <div class="p_week_record">
+                        <h5 class="hotgame_mark" style="float: left;">下注记录</h5>
+                        <div>
+                            <div class="u_block table-responsive">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>时间</th>
+                                            <th>笔数</th>
+                                            <th>输赢</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in weekRecordList" ng-click="detail(item.statDate, item.betCount);" >
+                                            <td>{{$index + 1}}</td>
+                                            <td>{{item.statDate}} {{item.week}}</td>
+                                            <td>{{item.betCount}}</td>
+                                            <td>{{item.rewardRebate}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span class="label btn-danger" style="padding: 8px; border-radius: 5px">总笔数： <span class="badges_m">{{allBetCount}}</span></span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="label btn-primary" style="padding: 8px; border-radius: 5px">总输赢： <span class="badges_m">{{allRewardRebate}}</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-view>

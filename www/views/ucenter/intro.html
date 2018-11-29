@@ -1,0 +1,81 @@
+<ion-view class="m-center">
+
+    <div id="app" style="padding-bottom: 1.33333rem;">
+        <div class="isHeader isNav">
+            <div class="headerWrap">
+                <div class="vux-header header">
+                    <div class="vux-header-left">
+                        <a class="vux-header-back" ng-click="back();">返回</a>
+                        <div class="left-arrow" style=""></div>
+                    </div>
+                    <h1 class="vux-header-title">我的钱包</h1>
+                    <div class="vux-header-right">
+                        <span>
+                            <a class=""><i class="icon icon-head-wallet"></i></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="wallet-info">
+                <p>账号余额</p>
+                <h4>
+                    <div>
+                        <span class="balance">{{My.getMoney()}}</span>
+                        <i class="icon-wallet-gold"></i>
+                    </div>
+                    <i class="icon-eyes icon-eyeOn"></i>
+                </h4>
+            </div>
+            <div class="userInfo group-min-top">
+                <div class="weui-cells vux-no-group-title">
+                    <a href="#/bank/deposit" class="weui-cell vux-tap-active weui-cell_access">
+                        <div class="weui-cell__hd"><i class="cell-icon cell-icon-recharge"></i></div>
+                        <div class="vux-cell-bd vux-cell-primary">
+                            <p><label class="vux-label">充值</label></p>
+                            <span class="vux-label-desc"></span>
+                        </div>
+                        <div class="weui-cell__ft"></div>
+                    </a>
+                    <a href="#/bank/withdraw" class="weui-cell vux-tap-active weui-cell_access">
+                        <div class="weui-cell__hd"><i class="cell-icon cell-icon-withdraw"></i></div>
+                        <div class="vux-cell-bd vux-cell-primary">
+                            <p><label class="vux-label">提现</label> </p>
+                            <span class="vux-label-desc"></span>
+                        </div>
+                        <div class="weui-cell__ft"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="userInfo group-min-top">
+                <div class="weui-cells vux-no-group-title">
+                    <a href="#/bank/trans/1" class="weui-cell vux-tap-active weui-cell_access">
+                        <div class="weui-cell__hd"><i class="cell-icon cell-icon-tzrecord"></i></div>
+                        <div class="vux-cell-bd vux-cell-primary">
+                            <p><label class="vux-label">存款记录</label> </p>
+                            <span class="vux-label-desc"></span>
+                        </div>
+                        <div class="weui-cell__ft"></div>
+                    </a>
+                    <a href="#/bank/trans/2" class="weui-cell vux-tap-active weui-cell_access">
+                        <div class="weui-cell__hd"><i class="cell-icon cell-icon-tzrecord"></i></div>
+                        <div class="vux-cell-bd vux-cell-primary">
+                            <p><label class="vux-label">取款记录</label> </p>
+                            <span class="vux-label-desc"></span>
+                        </div>
+                        <div class="weui-cell__ft"></div>
+                    </a>
+                    <a href="#/bank/bank" class="weui-cell vux-tap-active weui-cell_access">
+                        <div class="weui-cell__hd"><i class="cell-icon cell-icon-bank"></i></div>
+                        <div class="vux-cell-bd vux-cell-primary">
+                            <p><label class="vux-label">银行账号</label> </p>
+                            <span class="vux-label-desc"></span>
+                        </div>
+                        <div class="weui-cell__ft"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</ion-view>

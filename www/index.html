@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <title>welcome</title>
+    
+    <!-- favicon -->
+    <!-- <link rel="manifest" href="<?php echo base_url().'assets/favicon/manifest.json' ?>"> -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <!-- <meta name="msapplication-TileImage" content="<?php echo base_url().'assets/favicon/ms-icon-144x144.png'; ?>"> -->
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Content-Security-Policy" content="script-src * 'unsafe-inline' 'unsafe-eval'">
+    <!-- favicon -->
+
+    <script src="cordova.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.1.min.js"></script>
+    <script src="lib/ionic/js/qrcode.js"></script>
+    <script type="text/javascript"> 
+      $(document).ready(function(){ 
+        //alert("你好！这是测试网站，请勿充值，需要请联系QQ "); 
+      }) 
+    </script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/business-frontpage.css" rel="stylesheet">
+
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+
+    <!-- <link href="lib/ionic/css/ionic.min.css" rel="stylesheet"> -->
+    <!-- <link href="<?php echo base_url().'app/css/main.pack.min.css'; ?>" rel="stylesheet"> -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script src="<?php echo base_url().'assets/vendor/jquery/jquery.min.js'; ?>"></script> -->
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+
+</head>
+<body class="{{'skin_' + appConfig.skin}} ng-binding bodydiv" ng-app="ionicz" ng-controller="AppCtrl">
+  <!-- <script src="lib/spin.min.js"></script> -->
+  
+  <!-- <ion-nav-bar class="bar-header bar-positive hide"> -->
+    <!-- <ion-nav-back-button></ion-nav-back-button> -->
+  <!-- </ion-nav-bar> -->
+  
+
+
+  <!-- <ion-nav-view></ion-nav-view> -->
+
+  <div ng-if="inited">
+    <ion-nav-view  scroll="false"></ion-nav-view>
+  </div>
+
+
+  <div>
+    <div class="vux-flexbox vux-1px-t vux-flex-row" id="footer" ng-show="myValue">
+      <div class="vux-flexbox-item tabbar__item activeBox bar__item_on" style="margin-left: 8px;">
+        <a href="#/home"><i class="tabbar__icon home"></i></a>
+        <span class="tabbar__label">首页</span>
+      </div>
+      <div class="vux-flexbox-item tabbar__item activeBox" style="margin-left: 8px;">
+        <a href="#/ucenter/intro"><i class="tabbar__icon navWallet"></i></a>
+        <span class="tabbar__label">钱包</span>
+      </div>
+      <div class="vux-flexbox-item tabbar__item activeBox" style="margin-left: 8px;">
+        <a href="#/lottery/history/1"><i class="tabbar__icon navArt"></i></a>
+        <span class="tabbar__label">开奖结果</span>
+      </div>
+      <div class="vux-flexbox-item tabbar__item activeBox" style="margin-left: 8px;">
+        <a href="#/ucenter/index"><i class="tabbar__icon navMy"></i></a>
+        <span class="tabbar__label">我的</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- <footer class="py-5 myfooter"  style="position: fixed; bottom: 0; z-index: 999">
+    <div class="container">
+      <p class="m-0 text-center text-white">© 2011-2018 畅赢娱乐城版权所有<br>畅赢娱乐城郑重提示：彩票有风险，投注需谨慎，不向未满18周岁的青少年出售彩票</p>
+    </div>
+  </footer> -->
+
+  
+
+
+  <!-- <script id="test-template" type="text/ng-template">
+    <div class="row">
+      <div class="col">
+        <div class="item item-input" ng-repeat="item in debugMsgList">{{item.time + ': ' + item.msg + ' - '+ item.count}}</div>
+      </div>
+    </div>
+  </script> -->
+</body>
+
+
+<script src="config/config.js"></script>
+<script src="lib/ionic/js/ionic.bundle.min.js"></script>
+<script src="js/lib.pack.js?v=1610251707" ></script>
+<script src="js/app.pack.js?v=1610251707" ></script>
+<script src="views/home/home.js"></script>
+<script src="views/ucenter/ucenter.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script> -->
+</html>

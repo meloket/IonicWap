@@ -1,0 +1,332 @@
+body, button, dd, div, dl, dt, em, form, h1, h2, h3, h4, h5, h6, img, input, li, ol, p, strong, table, td, tr, ul {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    color: #333;
+    background: #f9f9f9;
+    font-size: .373333rem;
+    min-width: 320px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    margin: 0 auto;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    font-family: -apple-system-font,Helvetica Neue,sans-serif;
+}
+
+.list-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.scroll-content{
+    position: relative;
+    z-index: 1;
+}
+
+.login-reg, .login-reg-wrap {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.login-reg-wrap {
+    position: relative;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url("../img/login_bg2_pic@2x.png");
+    background-position: bottom;
+}
+
+.login-reg {
+    background-image: url("../img/login_bg_pic@2x.png");
+    background-position: top;
+}
+
+.login-reg-close {
+    width: .466667rem;
+    right: .4rem;
+    background: url("../img/login_close_icon@2x.png") no-repeat;
+    background-size: 100%;
+}
+
+.login-reg-close, .return-login {
+    position: absolute;
+    top: .4rem;
+    height: .466667rem;
+}
+
+.login-top {
+    width: 100%;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+}
+
+.default-avatar {
+    margin: 0 auto;
+    width: 2.506667rem;
+    height: 2.506667rem;
+    background: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.default-avatar img {
+    width: 100%;
+}
+
+img {
+    vertical-align: top;
+}
+
+.login-wrap .login-reg-con {
+    padding-bottom: 2.8rem;
+}
+
+.login-bottom, .login-reg-con {
+    padding-left: .8rem;
+    padding-right: .8rem;
+}
+
+.login-reg-con .weui-cells {
+    margin-top: 0;
+    font-size: .426667rem;
+    background: transparent;
+}
+
+.vux-no-group-title.weui-cells {
+    font-size: .373333rem;
+}
+
+.weui-cells {
+    margin-top: 1.17647059em;
+    background-color: #fff;
+    line-height: 1.41176471;
+    font-size: 17px;
+    overflow: hidden;
+    position: relative;
+}
+
+.vux-no-group-title {
+    margin-top: .77em;
+}
+
+.weui-cells .weui-cell {
+    padding: .266667rem .4rem;
+}
+
+.login-reg-con .weui-cell {
+    padding: .213333rem .4rem;
+    border: 1px solid rgba(0,0,0,.3);
+    border-radius: 1.333333rem;
+}
+
+.weui-cell {
+    padding: 10px 15px;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.login-reg-con .login-account .weui-cell__hd {
+    background-image: url("../img/login_account_icon@2x.png");
+}
+
+.login-reg-con .weui-cell__hd {
+    width: .533333rem;
+    height: .64rem;
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: 80%;
+}
+
+.login-reg-con .weui-cell .weui-input {
+    height: .64rem;
+    line-height: .64rem;
+}
+
+.weui-input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: 1.41176471em;
+    line-height: 1.41176471;
+}
+
+.weui-cell .vux-cell-bd, .weui-cell .weui-cell__ft {
+    font-size: .4rem;
+}
+
+.weui-cell__ft {
+    text-align: right;
+    color: #999;
+}
+
+.login-reg-con .weui-cell.login-passport {
+    padding-right: .8rem;
+}
+
+.login-reg-con .weui-cell+.weui-cell {
+    margin-top: .4rem;
+}
+
+.login-reg-con .login-passport .weui-cell__hd {
+    background-image: url("../img/login_passport_icon@2x.png");
+    background-size: 70%;
+}
+
+.weui-btn.weui-btn_radius {
+    border-radius: 1.333333rem;
+}
+
+.login-reg-con .weui-btn {
+    margin-top: .4rem;
+}
+
+button.weui-btn, input.weui-btn {
+    width: 100%;
+    border-width: 0;
+    outline: 0;
+    -webkit-appearance: none;
+}
+
+.weui-btn {
+    padding-left: .373333rem!important;
+    padding-right: .373333rem!important;
+    font-size: .48rem!important;
+    line-height: 1.12rem!important;
+}
+
+.weui-btn_warn {
+    background-color: #e64340;
+}
+
+.weui-btn {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    line-height: 2.33333333;
+    border-radius: 5px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    overflow: hidden;
+}
+
+button, input, option, select, textarea {
+    font-size: 100%;
+    vertical-align: middle;
+    outline: 0 none;
+    border-radius: 0;
+    border: none;
+}
+
+.vux-flex-row {
+    box-direction: row;
+    box-orient: horizontal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.vux-flexbox {
+    width: 100%;
+    text-align: left;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.vux-flexbox .vux-flexbox-item:first-child {
+    margin-left: 0!important;
+    margin-top: 0!important;
+}
+
+.vux-flexbox .vux-flexbox-item {
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-flex: 1;
+    min-width: 20px;
+    width: 0;
+}
+
+button.weui-btn.weui-btn_plain-warn, input.weui-btn.weui-btn_plain-warn {
+    border-width: 1px;
+    background-color: transparent;
+}
+
+.weui-btn .visitorplay {
+    background-image: url();
+}
+
+.weui-btn .icon {
+    width: .48rem;
+    height: .48rem;
+    display: inline-block;
+    margin-right: .16rem;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.weui-btn .registergo {
+    background-image: url("../img/registergo_icon@2x.png");
+}
+
+.autolog-box, .autolog-box .vux-check-icon>span {
+    font-size: .346667rem;
+    color: #888;
+    line-height: .48rem;
+}
+
+.clearfix {
+    zoom: 1;
+    clear: both;
+}
+
+.autolog-box li {
+    float: left;
+    width: 33.33%;
+    padding: .4rem 0;
+}
+
+.autolog-box li:nth-of-type(2) {
+    text-align: center;
+}
+
+.vux-check-icon {
+    display: inline-block;
+}
+
+.autolog-box .vux-check-icon .weui-icon.weui-icon-success, .autolog-box .vux-check-icon .weui-icon.weui-icon-success-circle {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFW…3VE1z+IjuE6kGNDJhV1Bi4K+pH21yjFg9uixkHqtMGEGAA55XC7SDa4IAAAAAASUVORK5CYII=);
+}
